@@ -1,10 +1,11 @@
-import Container from "@/@shared/components/Container";
+
+import AppLayout from "@/@shared/layout/AppLayout";
 
 
 export default function Home() {
   return (
-    <Container className="py-20">
-     
-    </Container>
+    <AppLayout>
+
+    </AppLayout>
   );
 }
