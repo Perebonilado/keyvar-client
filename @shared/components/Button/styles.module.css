@@ -1,0 +1,51 @@
+.root {
+  @apply font-medium flex items-center gap-4 justify-center;
+}
+
+.contained.primary {
+    @apply text-white bg-[#2C00B9] rounded-full border border-[#2C00B9]
+}
+
+.outlined.primary {
+    @apply border-2 border-[#2C00B9] text-[#2C00B9] bg-transparent
+}
+
+.text.primary {
+    @apply text-[#2C00B9] border-none !p-0
+}
+
+.text.secondary {
+    @apply text-[#000000] border-none !p-0
+}
+
+/* .primary {
+  @apply text-white border border-[#1363FF] bg-[#1363FF] rounded-lg;
+}
+
+.secondary {
+  @apply bg-[#FFFFFF] text-[#1363FF] border border-[#1363FF] rounded-lg;
+}
+
+.outlined {
+  @apply bg-transparent text-[#1363FF] border border-[#1363FF] rounded-full;
+}
+
+.text {
+  @apply text-[#000] border-none bg-transparent !p-0;
+} */
+
+.small {
+  @apply text-sm px-2 py-1;
+}
+
+.medium {
+  @apply text-base px-3 py-1;
+}
+
+.large {
+  @apply text-lg px-12 py-3;
+}
+
+.fullWidth {
+  @apply w-full;
+}
