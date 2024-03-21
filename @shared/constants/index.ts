@@ -3,6 +3,18 @@ export const NavLinks = {
     title: "Services",
     link: "/services",
   },
+  blog: {
+    title: "Blog",
+    link: "/blog",
+  },
+  privacyPolicy: {
+    title: "Privary Policy",
+    link: "/privacy-policy",
+  },
+  cookiePolicy: {
+    title: "Cookie Policy",
+    link: "/cookie-policy",
+  },
   aboutUs: {
     title: "About us",
     link: "/about-us",

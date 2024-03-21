@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { AppLogo } from "../AppLogo";
 import { NavLinks } from "@/@shared/constants";
 import Button from "../../ui-components/Button";
@@ -10,6 +10,19 @@ import MobileNav from "../MobileNav";
 const Navbar: FC = () => {
   const linkKeys = ["services", "aboutUs", "pricing", "insights"] as const;
   const [isMobileNav, setIsMobileNav] = useState(false);
+  const [isNavBottomBorder, setIsNavBottomBorder] = useState(false);
+
+  const handleSetNavBottomBorder = () => {
+    // if()
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleSetNavBottomBorder);
+
+    return () => {
+      window.removeEventListener("scroll", handleSetNavBottomBorder);
+    };
+  }, []);
 
   return (
     <>
@@ -54,12 +67,14 @@ const Navbar: FC = () => {
           </div>
         </Container>
       </nav>
-      {isMobileNav && <MobileNav
-        isSideNavOpen={isMobileNav}
-        handleClose={() => {
-          setIsMobileNav(!isMobileNav);
-        }}
-      />}
+      {isMobileNav && (
+        <MobileNav
+          isSideNavOpen={isMobileNav}
+          handleClose={() => {
+            setIsMobileNav(!isMobileNav);
+          }}
+        />
+      )}
     </>
   );
 };
