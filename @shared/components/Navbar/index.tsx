@@ -26,7 +26,7 @@ const Navbar: FC = () => {
 
   return (
     <>
-      <nav className="flex items-center fixed top-0 left-0 w-screen shadow-md h-20 bg-[#FBF9F0]">
+      <nav className="flex items-center fixed z-[5000] top-0 left-0 w-screen shadow-md h-20 bg-[#FBF9F0]">
         <Container>
           <div className="flex items-center gap-3">
             <div style={{ flex: 2 }} className="flex items-center gap-3">

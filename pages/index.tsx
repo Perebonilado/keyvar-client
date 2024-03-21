@@ -1,5 +1,5 @@
 
-import Banner from "@/@modules/Home/Banner";
+import Banner from "@/@modules/Home/Banner/Banner";
 import AppLayout from "@/@shared/layout/AppLayout";
 
 

@@ -1,0 +1,13 @@
+.banner {
+  background: #fbf9f0 url(/assets/home/banner-bg.png) no-repeat center 100% /
+    contain;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (min-width: 1160px) {
+  .banner {
+    background-size: 100vw 100vh;
+  }
+}
