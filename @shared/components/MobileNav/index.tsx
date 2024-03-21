@@ -31,7 +31,7 @@ const MobileNav: FC<Props> = ({ handleClose, isSideNavOpen }) => {
     <FadeInTransition>
       <div
         className={
-          "bg-[#020228] overflow-x-hidden rounded-md transition-all w-[90vw] max-w-[350px] h-[calc(100vh-100px)] z-[900] fixed top-[90px] left-1/2 -translate-x-1/2 flex flex-col justify-between"
+          "bg-[#020228] overflow-x-hidden rounded-md transition-all w-[90vw] max-w-[350px] h-[calc(100vh-100px)] z-[6000] fixed top-[90px] left-1/2 -translate-x-1/2 flex flex-col justify-between"
         }
       >
         <div className="flex flex-col h-full pt-12">
