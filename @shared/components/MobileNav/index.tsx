@@ -5,7 +5,6 @@ import MobileNavItem from "../MobileNavItem";
 import FacebookIcon from "@/icons/FacebookIcon";
 import LinkedInIcon from "@/icons/LinkedInIcon";
 import InstagramIcon from "@/icons/InstagramIcon";
-import FadeInTransition from "@/transitions/FadeIn";
 import AnimateRightTransition from "@/transitions/AnimateRight";
 
 interface Props {
