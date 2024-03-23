@@ -13,7 +13,7 @@ const ServiceCard: FC<Props> = ({ title, content, icon }) => {
 
       <h3 className="text-xl font-bold text-center">{title}</h3>
 
-      <ul className="flex flex-col gap-3 text-left text-sm list-disc px-4 pt-4">
+      <ul className="flex flex-col gap-3 text-left text-sm list-disc px-5 pt-4">
         {content.map((c, idx) => {
           return <li key={idx} className="text-base">{c}</li>;
         })}
