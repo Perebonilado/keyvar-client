@@ -20,7 +20,7 @@ const HelpClients: FC = () => {
         </p>
         <ServiceCardContainer data={data} />
 
-        <p className="text-white text-center text-sm absolute bottom-8 left-1/2 -translate-x-1/2">
+        <p className="text-white text-center text-sm absolute bottom-8 left-1/2 -translate-x-1/2 w-full">
           {" "}
           I see a service i'm interested in:
         </p>
