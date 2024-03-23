@@ -3,11 +3,13 @@ import Container from "@/@shared/ui-components/Container";
 import ArrowRight from "@/icons/ArrowRight";
 import React, { FC } from "react";
 import styles from "./styles.module.css";
+import PattronImage from "../PattronImage";
+import FrannemsImage from "../FrannemsImage";
 
 const Banner: FC = () => {
   return (
     <section className={styles.banner}>
-      <Container>
+      <Container className="relative">
         <div className="flex flex-col justify-center w-full max-w-[800px] py-20">
           <h1 className="text-5xl max-md:text-3xl leading-snug font-bold">
             We help elevate your brand with{" "}
@@ -27,6 +29,8 @@ const Banner: FC = () => {
             endicon={<ArrowRight />}
           />
         </div>
+        <PattronImage />
+        <FrannemsImage />
       </Container>
     </section>
   );

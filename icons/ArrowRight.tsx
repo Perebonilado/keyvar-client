@@ -3,8 +3,8 @@ import React, { FC } from "react";
 const ArrowRight: FC = () => {
   return (
     <svg
-      width="34"
-      height="22"
+      width="30"
+      height="18"
       viewBox="0 0 34 22"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
