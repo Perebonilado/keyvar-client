@@ -11,7 +11,7 @@ interface Props {
 
 const ServiceCardContainer: FC<Props> = ({ data }) => {
   return (
-    <section className="pt-20 flex items-center justify-center flex-wrap gap-8 w-full">
+    <section className="pt-12 pb-20 flex items-center justify-center flex-wrap gap-8 w-full">
       {data.map((item, idx) => {
         return <ServiceCard {...item} key={idx} />;
       })}
