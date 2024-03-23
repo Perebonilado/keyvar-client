@@ -27,7 +27,7 @@ const HelpClients: FC = () => {
         <Button
           title="View pricing"
           size="large"
-          className="!px-24 !py-2 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2"
+          className="!w-[300px] !py-2 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2"
         />
       </Container>
     </div>
