@@ -1,0 +1,22 @@
+[
+  {
+    "fullName": "Kalada Nemieboka",
+    "role": "Founder and Senior Analytics Consultant",
+    "imageUrl": "/assets/about-us/kalada.png"
+  },
+  {
+    "fullName": "Duke E. Miller",
+    "role": "UX/SEO Consultant",
+    "imageUrl": "/assets/about-us/duke.png"
+  },
+  {
+    "fullName": "Asembo Timon",
+    "role": "ML Engineer",
+    "imageUrl": "/assets/about-us/asembo.png"
+  },
+  {
+    "fullName": "Gloria Ogordi",
+    "role": "Social Media Manager",
+    "imageUrl": "/assets/about-us/gloria.png"
+  }
+]

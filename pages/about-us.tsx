@@ -1,5 +1,7 @@
 import Banner from "@/@modules/AboutUs/Banner/Banner";
+import OurCommitmentContainer from "@/@modules/AboutUs/OurCommitmentContainer";
 import SubBanner from "@/@modules/AboutUs/SubBanner";
+import TeamMemberCardContainer from "@/@modules/AboutUs/TeamMemberCardContainer";
 import AppHead from "@/@shared/components/AppHead";
 import AppLayout from "@/@shared/layout/AppLayout";
 import { NextPage } from "next";
@@ -12,6 +14,8 @@ const AboutUs: NextPage = () => {
       <AppLayout>
         <Banner />
         <SubBanner />
+        <OurCommitmentContainer />
+        <TeamMemberCardContainer />
       </AppLayout>
     </>
   );
