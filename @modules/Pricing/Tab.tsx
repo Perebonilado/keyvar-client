@@ -7,12 +7,12 @@ interface Props {
     subTitle: string;
     key: string;
   }[];
-  handleGetActiveTabTitle?: (title: string) => void;
+  handleGetActiveTabKey?: (key: string) => void;
   currentActiveTabOnMount?: string;
 }
 
 const Tab = forwardRef<HTMLDivElement, Props>(
-  ({ headers, handleGetActiveTabTitle, currentActiveTabOnMount }, ref) => {
+  ({ headers, handleGetActiveTabKey, currentActiveTabOnMount }, ref) => {
     const [headersCopy, setHeadersCopy] = useState(
       [...headers].map((header) => ({ ...header, isActive: false }))
     );
@@ -21,7 +21,7 @@ const Tab = forwardRef<HTMLDivElement, Props>(
       setHeadersCopy(() =>
         headersCopy.map((header) => {
           if (header.key === key) {
-            if (handleGetActiveTabTitle) handleGetActiveTabTitle(key);
+            if (handleGetActiveTabKey) handleGetActiveTabKey(key);
             return { ...header, isActive: true };
           }
           return { ...header, isActive: false };
