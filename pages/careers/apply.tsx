@@ -1,11 +1,13 @@
 import AppHead from "@/@shared/components/AppHead";
 import AppLayout from "@/@shared/layout/AppLayout";
 import Checkbox from "@/@shared/ui-components/Input/Checkbox/Checkbox";
+import FileAttachmentInput from "@/@shared/ui-components/Input/FileAttachmentInput";
 import TextArea from "@/@shared/ui-components/Input/TextArea";
 import TextField from "@/@shared/ui-components/Input/TextField";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 
 const JobApplication: FC = () => {
+  const [file, setFile] = useState<File | null>(null);
   return (
     <>
       <AppHead title="Job Application" />
@@ -23,7 +25,19 @@ const JobApplication: FC = () => {
             label="Description"
           />
 
-          <Checkbox label="Do you want ice cream?"/>
+          <Checkbox label="Do you want ice cream?" />
+
+          <FileAttachmentInput
+            handleSelectFile={(file) => {
+              setFile(file);
+            }}
+            handleDeleteFile={() => {
+              setFile(null);
+            }}
+            attachedFile={file}
+            label="Resume/CV"
+            isRequired
+          />
         </div>
       </AppLayout>
     </>
