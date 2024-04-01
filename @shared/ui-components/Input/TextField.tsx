@@ -17,7 +17,7 @@ const TextField: FC<Props> = ({ isRequired, label, error, ...props }) => {
       )}
       {
         <input
-          className="min-h-[20px] flex m-0 placeholder:text-gray-400 placeholder:text-sm px-4 py-1  rounded-md outline-none bg-white border-none"
+          className="min-h-[20px] text-black flex m-0 placeholder:text-gray-400 placeholder:text-sm px-4 py-1  rounded-md outline-none bg-white border-none"
           {...props}
         />
       }

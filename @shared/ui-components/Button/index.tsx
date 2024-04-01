@@ -1,8 +1,8 @@
-import React, { FC, HTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes, FC, HTMLAttributes } from "react";
 import s from "./styles.module.css";
 import cn from "classnames";
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "text" | "outlined" | "contained";
   color?: "primary" | "secondary";
   size?: "large" | "medium" | "small";

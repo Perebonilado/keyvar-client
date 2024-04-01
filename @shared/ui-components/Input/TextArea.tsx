@@ -18,9 +18,8 @@ const TextArea: FC<Props> = ({ isRequired, label, error, ...props }) => {
       )}
       {
         <textarea
-          className="flex m-0 placeholder:text-gray-400 placeholder:text-sm px-4 py-3 resize-none  rounded-md outline-none bg-white border-none"
+          className="flex m-0 text-black placeholder:text-gray-400 placeholder:text-sm px-4 py-3 resize-none  rounded-md outline-none bg-white border-none"
           {...props}
-          rows={5}
         ></textarea>
       }
       {Boolean(error?.trim()) && (
