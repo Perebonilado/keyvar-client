@@ -82,7 +82,7 @@ const JobApplicationForm: FC = () => {
 
             <p className="font-semibold mt-16">Tell us about yourself</p>
 
-            <div className="py-4 grid grid-cols-2 gap-6 gap-x-16">
+            <div className="py-4 grid grid-cols-2 gap-6 gap-x-16 max-md:grid-cols-1">
               <TextField
                 label="First Name"
                 isRequired
@@ -112,7 +112,7 @@ const JobApplicationForm: FC = () => {
               {...formik.getFieldProps("experience")}
             />
 
-            <div className="my-8 w-full max-w-[280px]">
+            <div className="my-8 w-full max-w-[280px] max-sm:max-w-[100%]">
               <FileAttachmentInput
                 attachedFile={resume}
                 label="Resume/CV"
@@ -126,7 +126,7 @@ const JobApplicationForm: FC = () => {
               />
             </div>
 
-            <div className="my-8 w-full max-w-[280px]">
+            <div className="my-8 w-full max-w-[280px] max-sm:max-w-[100%]">
               <DropDown
                 label="Are you legally eligible/authorized to work in the country?"
                 isRequired
@@ -135,7 +135,7 @@ const JobApplicationForm: FC = () => {
               />
             </div>
 
-            <div className="mb-8 mt-24 w-full mx-auto max-w-[280px]">
+            <div className="mb-8 mt-24 w-full mx-auto max-w-[280px] max-sm:max-w-[100%]">
               <Checkbox
                 label="I agree with Keyvar Privacy & Policy"
                 checked={termsAccepted === true}
