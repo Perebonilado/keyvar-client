@@ -6,6 +6,7 @@ import TextArea from "@/@shared/ui-components/Input/TextArea";
 import FileAttachmentInput from "@/@shared/ui-components/Input/FileAttachmentInput";
 import DropDown from "@/@shared/ui-components/Input/DropDown";
 import Checkbox from "@/@shared/ui-components/Input/Checkbox/Checkbox";
+import { toast } from "react-toastify";
 
 const initialValues = {
   firstName: "",
@@ -29,7 +30,24 @@ const JobApplicationForm: FC = () => {
   const formik = useFormik({
     initialValues,
     onSubmit: (values) => {
-      console.log(values);
+      const extrValidationChecks = [
+        { value: role, message: "Select a valid role" },
+        { value: resume, message: "Please upload a resume" },
+        { value: termsAccepted, message: "Please accept terms to proceed" },
+      ];
+
+      const invalidField = extrValidationChecks.find(
+        (validation) => !Boolean(validation.value)
+      );
+
+      if (invalidField) {
+        console.log(invalidField.message)
+        toast.error(invalidField.message);
+
+        return;
+      }
+
+      console.log(values)
     },
   });
 
