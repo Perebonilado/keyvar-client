@@ -4,6 +4,7 @@ import CareerCard from "./CareerCard";
 import Button from "@/@shared/ui-components/Button";
 import Link from "next/link";
 import jobOpenings from "../../json-data/job-openings.json";
+import { NavLinks } from "@/@shared/constants";
 
 const CareerCardContainer: FC = () => {
   return (
@@ -17,7 +18,9 @@ const CareerCardContainer: FC = () => {
       <div className="pb-14 flex flex-col gap-7 text-center">
         <div className="w-full mx-auto max-w-[300px]">
           <p className="text-sm mb-3">See a role you’re interested in?</p>
-          <Button title="Apply" fullWidth />
+          <Link href={NavLinks.careers.subLinks.apply.link}>
+            <Button title="Apply" fullWidth />
+          </Link>
 
           <Link href={"/"}>
             <Button

@@ -49,6 +49,7 @@ const JobApplicationForm: FC = () => {
         return;
       }
 
+      // send value to parent component and handle submission there
       console.log(values);
     },
   });

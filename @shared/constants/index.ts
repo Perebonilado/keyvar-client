@@ -34,7 +34,13 @@ export const NavLinks = {
   careers: {
     title: "Careers",
     link: "/careers",
+    subLinks: {
+      apply: {
+        title: "Apply",
+        link: '/careers/apply'
+      },
+    },
   },
 };
 
-export const mobileScreenSizePx = 768
+export const mobileScreenSizePx = 768;
