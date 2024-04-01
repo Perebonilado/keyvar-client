@@ -7,6 +7,7 @@ import FileAttachmentInput from "@/@shared/ui-components/Input/FileAttachmentInp
 import DropDown from "@/@shared/ui-components/Input/DropDown";
 import Checkbox from "@/@shared/ui-components/Input/Checkbox/Checkbox";
 import { toast } from "react-toastify";
+import { JobApplicationFormValidation } from "@/FormValidations/JobApplicationFormValidation";
 
 const initialValues = {
   firstName: "",
@@ -29,6 +30,7 @@ const JobApplicationForm: FC = () => {
 
   const formik = useFormik({
     initialValues,
+    validationSchema: JobApplicationFormValidation,
     onSubmit: (values) => {
       const extrValidationChecks = [
         { value: role, message: "Select a valid role" },
@@ -41,13 +43,13 @@ const JobApplicationForm: FC = () => {
       );
 
       if (invalidField) {
-        console.log(invalidField.message)
+        console.log(invalidField.message);
         toast.error(invalidField.message);
 
         return;
       }
 
-      console.log(values)
+      console.log(values);
     },
   });
 
@@ -87,21 +89,29 @@ const JobApplicationForm: FC = () => {
                 label="First Name"
                 isRequired
                 {...formik.getFieldProps("firstName")}
+                error={
+                  formik.touched.firstName ? formik.errors.firstName : undefined
+                }
               />
               <TextField
                 label="Last Name"
                 isRequired
                 {...formik.getFieldProps("lastName")}
+                error={
+                  formik.touched.lastName ? formik.errors.lastName : undefined
+                }
               />
               <TextField
                 label="Email"
                 isRequired
                 {...formik.getFieldProps("email")}
+                error={formik.touched.email ? formik.errors.email : undefined}
               />
               <TextField
                 label="Phone number"
                 isRequired
                 {...formik.getFieldProps("phone")}
+                error={formik.touched.phone ? formik.errors.phone : undefined}
               />
             </div>
             <TextArea
@@ -110,6 +120,9 @@ const JobApplicationForm: FC = () => {
               placeholder="Please briefly describe your project or ask us anything"
               rows={12}
               {...formik.getFieldProps("experience")}
+              error={
+                formik.touched.experience ? formik.errors.experience : undefined
+              }
             />
 
             <div className="my-8 w-full max-w-[280px] max-sm:max-w-[100%]">
