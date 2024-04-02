@@ -1,10 +1,18 @@
-import { NextPage } from 'next'
-import React from 'react'
+import LeadSuccessContainer from "@/@modules/Leads/LeadSuccessContainer";
+import AppHead from "@/@shared/components/AppHead";
+import AppLayout from "@/@shared/layout/AppLayout";
+import { NextPage } from "next";
+import React from "react";
 
-const SubmissionSuccess:NextPage = () => {
+const SubmissionSuccess: NextPage = () => {
   return (
-    <div>SubmissionSuccess</div>
-  )
-}
+    <>
+      <AppHead title="Lead Submission Success" />
+      <AppLayout>
+        <LeadSuccessContainer />
+      </AppLayout>
+    </>
+  );
+};
 
-export default SubmissionSuccess
+export default SubmissionSuccess;
