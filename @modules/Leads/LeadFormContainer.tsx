@@ -5,6 +5,7 @@ import TextArea from "@/@shared/ui-components/Input/TextArea";
 import Checkbox from "@/@shared/ui-components/Input/Checkbox/Checkbox";
 import { toast } from "react-toastify";
 import { Form, FormikProvider, useFormik } from "formik";
+import { LeadsFormValidation } from "@/FormValidations/LeadsFormValidation";
 
 const initialValues = {
   firstName: "",
@@ -20,6 +21,7 @@ const LeadFormContainer: FC = () => {
 
   const formik = useFormik({
     initialValues,
+    validationSchema: LeadsFormValidation,
     onSubmit: (values) => {
       const extrValidationChecks = [
         { value: service, message: "Please select a service" },
@@ -43,7 +45,7 @@ const LeadFormContainer: FC = () => {
     <FormikProvider value={formik}>
       <Form>
         <div>
-          <section className="bg-[#020228] mx-auto w-full max-w-[900px] rounded-xl p-8 max-md:px-4 mb-20 text-white">
+          <section className="bg-[#020228] mx-auto w-full max-w-[900px] rounded-xl p-8 max-md:px-4 max-sm:px-3 mb-20 text-white">
             <p className="font-semibold mb-8">
               Tell us what service you're looking into{" "}
               <span className="!text-red-700">*</span>
@@ -88,7 +90,7 @@ const LeadFormContainer: FC = () => {
                 }
               />
               <TextField
-                label="Email"
+                label="Business Email"
                 isRequired
                 {...formik.getFieldProps("email")}
                 error={formik.touched.email ? formik.errors.email : undefined}

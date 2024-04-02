@@ -43,7 +43,6 @@ const JobApplicationForm: FC = () => {
       );
 
       if (invalidField) {
-        console.log(invalidField.message);
         toast.error(invalidField.message);
 
         return;
@@ -58,7 +57,7 @@ const JobApplicationForm: FC = () => {
     <FormikProvider value={formik}>
       <Form>
         <div>
-          <section className="bg-[#020228] mx-auto w-full max-w-[900px] rounded-xl p-8 max-md:px-4 mb-20 text-white">
+          <section className="bg-[#020228] mx-auto w-full max-w-[900px] rounded-xl p-8 max-md:px-4 max-sm:px-3 mb-20 text-white">
             <p className="font-semibold mb-8">
               Tell us what role you're looking into{" "}
               <span className="!text-red-700">*</span>
