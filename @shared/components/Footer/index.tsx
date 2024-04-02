@@ -7,10 +7,20 @@ import FacebookIcon from "@/icons/FacebookIcon";
 import LinkedInIcon from "@/icons/LinkedInIcon";
 import InstagramIcon from "@/icons/InstagramIcon";
 import ChevronRight from "@/icons/ChevronRight";
+import cn from "classnames";
+import { AppLogo } from "../AppLogo";
 
-const Footer: FC = () => {
+interface Props {
+  bgColor?: "default" | "white";
+}
+
+const Footer: FC<Props> = ({ bgColor = "default" }) => {
+  const footerRootStyling = cn(`bg-[#020228] text-sm `, {
+    ["bg-[#020228] text-white"]: bgColor === "default",
+    ["bg-white text-black"]: bgColor === "white",
+  });
   return (
-    <footer className="bg-[#020228] text-sm text-white">
+    <footer className={footerRootStyling}>
       <Container className="py-10">
         <div className="flex flex-col gap-6 md:hidden pb-14 pt-6 border-b border-b-gray-500">
           <Link href={NavLinks.services.link}>
@@ -45,7 +55,7 @@ const Footer: FC = () => {
           </Link>
         </div>
         <div className="max-md:pt-14">
-          <AltLogo />
+          {bgColor !== "default" ? <AppLogo /> : <AltLogo />}
         </div>
         <div className="py-8 flex">
           <div style={{ flex: 1 }} className="flex flex-col gap-2">

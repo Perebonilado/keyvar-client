@@ -33,7 +33,12 @@ const SubscriptionCard: FC = () => {
               error={formik.touched.email ? formik.errors.email : undefined}
             />
 
-            <Button title="Subscribe" type="submit" fullWidth className="mt-4"/>
+            <Button
+              title="Subscribe"
+              type="submit"
+              fullWidth
+              className="mt-4"
+            />
           </Form>
         </FormikProvider>
       </div>

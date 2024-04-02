@@ -1,12 +1,19 @@
 import { Insight } from "@/models/Insight";
 import Image from "next/image";
 import React, { FC } from "react";
+import { useRouter } from "next/router";
 
 interface Props extends Insight {}
 
 const InsightItem: FC<Props> = (props) => {
+  const router = useRouter();
   return (
-    <div className="w-full max-w-[350px] cursor-pointer">
+    <div
+      className="w-full max-w-[350px] cursor-pointer"
+      onClick={() => {
+        router.push(`/insights/${props.id}`);
+      }}
+    >
       <div className="h-[180px] w-full border rounded-t-xl relative overflow-hidden">
         <Image
           layout="fill"
