@@ -10,19 +10,6 @@ import MobileNav from "../MobileNav";
 const Navbar: FC = () => {
   const linkKeys = ["services", "aboutUs", "pricing", "insights"] as const;
   const [isMobileNav, setIsMobileNav] = useState(false);
-  const [isNavBottomBorder, setIsNavBottomBorder] = useState(false);
-
-  const handleSetNavBottomBorder = () => {
-    // if()
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleSetNavBottomBorder);
-
-    return () => {
-      window.removeEventListener("scroll", handleSetNavBottomBorder);
-    };
-  }, []);
 
   return (
     <>
