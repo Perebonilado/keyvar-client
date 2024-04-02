@@ -6,28 +6,31 @@ import SubscriptionCard from "./SubscriptionCard";
 import { Insight } from "@/models/Insight";
 
 const InsightItemContainer: FC = () => {
-  const [insights, setInsights] = useState<Insight[] | string[]>([]);
-
-  useEffect(() => {
-    if (dummyArticles.length) {
-      dummyArticles.splice(2, 0, "subscription");
-
-      setInsights(dummyArticles);
-    }
-  }, [JSON.stringify(dummyArticles)]);
-
   return (
     <section className="bg-[#020228]">
       <div className="bg-white rounded-t-xl py-14">
         <Container>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6">
-            {insights?.map((item, idx) => {
-              return typeof item === "string" ? (
-                <SubscriptionCard key={idx} />
-              ) : (
-                <InsightItem {...item} key={idx} />
-              );
-            })}
+            {dummyArticles.length ? (
+              dummyArticles.map((item, idx) => {
+                // Check if it's the third index or if there are not up to 3 items
+                if (
+                  idx === 1 ||
+                  (idx === dummyArticles.length - 1 && idx < 2)
+                ) {
+                  return (
+                    <React.Fragment key={idx}>
+                      <InsightItem {...item} />
+                      <SubscriptionCard />
+                    </React.Fragment>
+                  );
+                } else {
+                  return <InsightItem {...item} key={idx} />;
+                }
+              })
+            ) : (
+              <SubscriptionCard />
+            )}
           </div>
 
           <div className="w-full max-w-[300px] mx-auto mt-32 mb-10">
@@ -64,4 +67,4 @@ const dummyArticles = [
     author: "Gloria Ogordi",
     date: "December 28, 2023",
   },
-] as Insight[] | string[];
+] as Insight[];
