@@ -3,26 +3,18 @@ import React, { FC, useEffect, useState } from "react";
 import InsightItem from "./InsightItem";
 import Button from "@/@shared/ui-components/Button";
 import SubscriptionCard from "./SubscriptionCard";
+import { Insight } from "@/models/Insight";
 
 const InsightItemContainer: FC = () => {
-  const [insights, setInsights] = useState<
-    | {
-        imageUrl: string;
-        title: string;
-        body: string;
-        author: string;
-        date: string;
-      }[]
-    | string[]
-    | null
-  >(null);
-  
+  const [insights, setInsights] = useState<Insight[] | string[]>([]);
+
   useEffect(() => {
-    if (dummyArticles.length) dummyArticles.splice(2, 0, "subscription");
+    if (dummyArticles.length) {
+      dummyArticles.splice(2, 0, "subscription");
 
-    setInsights(dummyArticles);
+      setInsights(dummyArticles);
+    }
   }, [JSON.stringify(dummyArticles)]);
-
 
   return (
     <section className="bg-[#020228]">
@@ -72,12 +64,4 @@ const dummyArticles = [
     author: "Gloria Ogordi",
     date: "December 28, 2023",
   },
-] as
-  | {
-      imageUrl: string;
-      title: string;
-      body: string;
-      author: string;
-      date: string;
-    }[]
-  | string[];
+] as Insight[] | string[];

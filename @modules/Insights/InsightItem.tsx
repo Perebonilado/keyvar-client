@@ -1,13 +1,8 @@
+import { Insight } from "@/models/Insight";
 import Image from "next/image";
 import React, { FC } from "react";
 
-interface Props {
-  imageUrl: string;
-  title: string;
-  body: string;
-  author: string;
-  date: string;
-}
+interface Props extends Insight {}
 
 const InsightItem: FC<Props> = (props) => {
   return (
