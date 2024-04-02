@@ -1,22 +1,45 @@
 import Container from "@/@shared/ui-components/Container";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import InsightItem from "./InsightItem";
 import Button from "@/@shared/ui-components/Button";
+import SubscriptionCard from "./SubscriptionCard";
 
 const InsightItemContainer: FC = () => {
+  const [insights, setInsights] = useState<
+    | {
+        imageUrl: string;
+        title: string;
+        body: string;
+        author: string;
+        date: string;
+      }[]
+    | string[]
+    | null
+  >(null);
+  
+  useEffect(() => {
+    if (dummyArticles.length) dummyArticles.splice(2, 0, "subscription");
+
+    setInsights(dummyArticles);
+  }, [JSON.stringify(dummyArticles)]);
+
+
   return (
     <section className="bg-[#020228]">
       <div className="bg-white rounded-t-xl py-14">
         <Container>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6">
-
-            {dummyArticles.map((art, idx)=>{
-              return <InsightItem {...art} key={idx}/>
+            {insights?.map((item, idx) => {
+              return typeof item === "string" ? (
+                <SubscriptionCard key={idx} />
+              ) : (
+                <InsightItem {...item} key={idx} />
+              );
             })}
           </div>
 
           <div className="w-full max-w-[300px] mx-auto mt-32 mb-10">
-            <Button title="View more" fullWidth/>
+            <Button title="View more" fullWidth />
           </div>
         </Container>
       </div>
@@ -49,4 +72,12 @@ const dummyArticles = [
     author: "Gloria Ogordi",
     date: "December 28, 2023",
   },
-];
+] as
+  | {
+      imageUrl: string;
+      title: string;
+      body: string;
+      author: string;
+      date: string;
+    }[]
+  | string[];
