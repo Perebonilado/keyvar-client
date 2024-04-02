@@ -2,6 +2,8 @@ import ScrollableIcon from "@/icons/ScrollableIcon";
 import React, { ElementRef, FC, useRef, useState } from "react";
 import DropDownItem from "./DropDownItem";
 import useClickOutside from "@/hooks/useClickOutside";
+import cn from "classnames";
+import ChevronDown from "@/icons/ChevronDown";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   options: { label: string; value: string }[];
@@ -10,6 +12,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: string;
   isRequired?: boolean;
+  variant?: "regular" | "alt";
 }
 
 const DropDown: FC<Props> = ({
@@ -19,6 +22,7 @@ const DropDown: FC<Props> = ({
   label,
   error,
   isRequired,
+  variant = "alt",
   ...props
 }) => {
   const [isOptionsOpen, setOptionsOpen] = useState(false);
@@ -27,6 +31,14 @@ const DropDown: FC<Props> = ({
   });
   const mirrorInputRef = useRef<ElementRef<"input">>(null);
   const mainInputRef = useRef<ElementRef<"input">>(null);
+
+  const inputStyleBasedOnVariant = cn(
+    `w-full p-0 text-black px-4 outline-none cursor-pointer text-sm`,
+    {
+      ["h-[42px]"]: variant === "regular",
+      ["rounded-full h-[25px]"]: variant === "alt",
+    }
+  );
 
   return (
     <>
@@ -41,13 +53,17 @@ const DropDown: FC<Props> = ({
       >
         <input
           ref={mirrorInputRef}
-          className="w-full rounded-full h-[25px] p-0 text-black px-4 outline-none cursor-pointer text-sm"
+          className={inputStyleBasedOnVariant}
           onClick={() => setOptionsOpen(true)}
           placeholder={placeholder}
           readOnly
         />
         <input className="hidden" ref={mainInputRef} {...props} />
-        <ScrollableIcon className="absolute right-2 top-1/2 -translate-y-1/2" />
+        {variant === "alt" ? (
+          <ScrollableIcon className="absolute right-2 top-1/2 -translate-y-1/2" />
+        ) : (
+          <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2" />
+        )}
         {isOptionsOpen && (
           <div className="w-full absolute left-0 top-[calc(100%+5px)] px-4 bg-white rounded-md cursor-pointer shadow-md">
             {options.map((opt, idx) => (

@@ -1,8 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes } from "react";
 
-const ChevronDown:FC = () => {
+const ChevronDown: FC<HTMLAttributes<SVGSVGElement>> = ({ ...props }) => {
   return (
     <svg
+      {...props}
       width="10"
       height="6"
       viewBox="0 0 12 8"
