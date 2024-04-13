@@ -17,7 +17,10 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   );
 
   const apiQueriesToWatch = Object.values({
-    businessEnquiry: Object.values(businessEnquiry.queries),
+    businessEnquiry: [
+      ...Object.values(businessEnquiry.mutations),
+      ...Object.values(businessEnquiry.queries),
+    ],
   }).flat();
 
   const [isLoading, setLoading] = useState(false);
@@ -55,6 +58,7 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     handleSetLoadingState();
     handleShowErrorModal();
+    console.log(apiQueriesToWatch);
   }, [JSON.stringify(apiQueriesToWatch)]);
 
   return (
