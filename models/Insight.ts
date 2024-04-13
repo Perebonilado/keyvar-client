@@ -6,3 +6,7 @@ export interface Insight {
   author: string;
   date: string;
 }
+
+export interface NewsLetterSubscriptionPayloadModel {
+  email: string;
+}

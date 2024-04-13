@@ -15,11 +15,16 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const businessEnquiry = useSelector(
     (state: RootState) => state["business-enquiry"]
   );
+  const newInsight = useSelector((state: RootState) => state["news-insight"]);
 
   const apiQueriesToWatch = Object.values({
     businessEnquiry: [
       ...Object.values(businessEnquiry.mutations),
       ...Object.values(businessEnquiry.queries),
+    ],
+    newsInsight: [
+      ...Object.values(newInsight.mutations),
+      ...Object.values(newInsight.queries),
     ],
   }).flat();
 
@@ -37,9 +42,11 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const handleShowErrorModal = () => {
     const errorMessages: string[] = [];
     apiQueriesToWatch.forEach((query) => {
-      if (query?.error && query?.error?.message) {
-        errorMessages.push(query?.error?.message);
-      } else if (query?.error && !query?.error?.message) {
+      console.log(query);
+      if (query?.error && "data" in query?.error) {
+        const { message }: any = query.error.data;
+        errorMessages.push(message);
+      } else if (query?.error && !("data" in query?.error)) {
         errorMessages.push(
           `An error occured when trying to ${formatCamelCaseToIndividualWords(
             query?.endpointName
