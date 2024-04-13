@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Button from "@/@shared/ui-components/Button";
 import TextField from "@/@shared/ui-components/Input/TextField";
 import TextArea from "@/@shared/ui-components/Input/TextArea";
@@ -6,6 +6,9 @@ import Checkbox from "@/@shared/ui-components/Input/Checkbox/Checkbox";
 import { toast } from "react-toastify";
 import { Form, FormikProvider, useFormik } from "formik";
 import { LeadsFormValidation } from "@/FormValidations/LeadsFormValidation";
+import { useMakeBusinessEnquiryMutation } from "@/api-services/business-enquiry.service";
+import { ServicesEnum } from "@/models/business-enquiry";
+import { useRouter } from "next/router";
 
 const initialValues = {
   firstName: "",
@@ -18,6 +21,15 @@ const initialValues = {
 const LeadFormContainer: FC = () => {
   const [service, setService] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [makeEnquiry, { isLoading, isSuccess, error }] =
+    useMakeBusinessEnquiryMutation();
+  const router = useRouter();
+
+  const servicesMapping = {
+    "Data & Analytics": ServicesEnum.Data_Analytics,
+    "UX/SEO": ServicesEnum.UX_SEO,
+    "Social Media Management": ServicesEnum.SOCIAL_MEDIA_MANAGEMENT,
+  };
 
   const formik = useFormik({
     initialValues,
@@ -39,9 +51,24 @@ const LeadFormContainer: FC = () => {
       }
 
       // submit form here
-      // route to /leads/submission-success on success
+      makeEnquiry({
+        email: values.email,
+        enquiry: values.description,
+        firstName: values.firstName,
+        lastName: values.lastName,
+        phone: values.phone || "",
+        service: servicesMapping[service as keyof typeof servicesMapping],
+      });
     },
   });
+
+  useEffect(() => {
+    if (isSuccess) {
+      formik.resetForm();
+      router.push("/leads/submission-success");
+    }
+  }, [isSuccess]);
+
   return (
     <FormikProvider value={formik}>
       <Form>
@@ -53,20 +80,18 @@ const LeadFormContainer: FC = () => {
             </p>
 
             <div className="flex flex-col gap-6 mt-8">
-              {["Data & Analytics", "UX/SEO", "Social Media Management"].map(
-                (item, idx) => {
-                  return (
-                    <Checkbox
-                      onChange={() => {
-                        setService(item);
-                      }}
-                      checked={service === item}
-                      label={item}
-                      key={idx}
-                    />
-                  );
-                }
-              )}
+              {Object.keys(servicesMapping).map((item, idx) => {
+                return (
+                  <Checkbox
+                    onChange={() => {
+                      setService(item);
+                    }}
+                    checked={service === item}
+                    label={item}
+                    key={idx}
+                  />
+                );
+              })}
             </div>
 
             <p className="font-semibold mt-16">
@@ -126,7 +151,12 @@ const LeadFormContainer: FC = () => {
           </section>
 
           <div className="w-full mx-auto max-w-[300px]">
-            <Button title="Send Application" type="submit" fullWidth />
+            <Button
+              title="Send Application"
+              type="submit"
+              disabled={isLoading}
+              fullWidth
+            />
           </div>
         </div>
       </Form>
