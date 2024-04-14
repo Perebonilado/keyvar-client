@@ -16,6 +16,7 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     (state: RootState) => state["business-enquiry"]
   );
   const newInsight = useSelector((state: RootState) => state["news-insight"]);
+  const career = useSelector((state: RootState) => state.career);
 
   const apiQueriesToWatch = Object.values({
     businessEnquiry: [
@@ -25,6 +26,10 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
     newsInsight: [
       ...Object.values(newInsight.mutations),
       ...Object.values(newInsight.queries),
+    ],
+    career: [
+      ...Object.values(career.mutations),
+      ...Object.values(career.queries),
     ],
   }).flat();
 

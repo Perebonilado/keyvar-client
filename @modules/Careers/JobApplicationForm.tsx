@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useFormik, Form, FormikProvider } from "formik";
 import Button from "@/@shared/ui-components/Button";
 import TextField from "@/@shared/ui-components/Input/TextField";
@@ -8,6 +8,11 @@ import DropDown from "@/@shared/ui-components/Input/DropDown";
 import Checkbox from "@/@shared/ui-components/Input/Checkbox/Checkbox";
 import { toast } from "react-toastify";
 import { JobApplicationFormValidation } from "@/FormValidations/JobApplicationFormValidation";
+import {
+  useApplyForJobMutation,
+  useGetActiveJobRolesQuery,
+} from "@/api-services/careers.service";
+import { JobApplicationPayload } from "@/models/career";
 
 const initialValues = {
   firstName: "",
@@ -27,6 +32,22 @@ const JobApplicationForm: FC = () => {
   const [resume, setResume] = useState<File | null>(null);
   const [role, setRole] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const {
+    data: roles,
+    isError: rolesError,
+    refetch: refetchRoles,
+  } = useGetActiveJobRolesQuery("");
+
+  const [apply, { isSuccess: jobApplicationSuccess }] =
+    useApplyForJobMutation();
+
+  useEffect(() => {
+    if (jobApplicationSuccess) {
+      formik.resetForm();
+      setRole(() => "");
+      toast.success("Job Application Successful!");
+    }
+  }, [jobApplicationSuccess]);
 
   const formik = useFormik({
     initialValues,
@@ -48,8 +69,24 @@ const JobApplicationForm: FC = () => {
         return;
       }
 
-      // send value to parent component and handle submission there
-      console.log(values);
+      // submit form
+      const formData = new FormData();
+      const payload: JobApplicationPayload = {
+        email: values.email,
+        experience: values.experience,
+        firstName: values.firstName,
+        isWorkAuthorization: values.isAuthorized === "1" ? true : false,
+        lastName: values.lastName,
+        roleId: role,
+        phone: values.phone || "",
+        resume: resume as File,
+      };
+
+      for (const key in payload) {
+        formData.append(key, payload[key as keyof typeof payload] as any);
+      }
+
+      apply(formData);
     },
   });
 
@@ -63,23 +100,27 @@ const JobApplicationForm: FC = () => {
               <span className="!text-red-700">*</span>
             </p>
             <div className="flex flex-col gap-6 mt-8">
-              {[
-                "Digital Marketing Strategist",
-                "Content Marketing Specialist",
-                "Marketing Data Scientist",
-                "Graphic Designer",
-              ].map((item, idx) => {
-                return (
-                  <Checkbox
-                    onChange={() => {
-                      setRole(item);
-                    }}
-                    checked={role === item}
-                    label={item}
-                    key={idx}
-                  />
-                );
-              })}
+              {roles &&
+                roles.map((item, idx) => {
+                  return (
+                    <Checkbox
+                      onChange={() => {
+                        setRole(item.id);
+                      }}
+                      checked={role === item.id}
+                      label={item.title}
+                      key={idx}
+                    />
+                  );
+                })}
+              {!roles && rolesError && (
+                <Button
+                  title="Refetch Roles"
+                  className="w-fit"
+                  variant="contained"
+                  onClick={refetchRoles}
+                />
+              )}
             </div>
 
             <p className="font-semibold mt-16">Tell us about yourself</p>
