@@ -1,9 +1,9 @@
-import { Insight } from "@/models/Insight";
+import { InsightSummaryModel } from "@/models/Insight";
 import Image from "next/image";
 import React, { FC } from "react";
 import { useRouter } from "next/router";
 
-interface Props extends Insight {}
+interface Props extends InsightSummaryModel {}
 
 const InsightItem: FC<Props> = (props) => {
   const router = useRouter();

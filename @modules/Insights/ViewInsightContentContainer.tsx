@@ -2,12 +2,20 @@ import Button from "@/@shared/ui-components/Button";
 import Container from "@/@shared/ui-components/Container";
 import Link from "next/link";
 import React, { FC } from "react";
+import { sanitize } from "dompurify";
 
-const ViewInsightContentContainer: FC = () => {
+interface Props {
+  blogData: string;
+}
+
+const ViewInsightContentContainer: FC<Props> = ({ blogData }) => {
   return (
     <section>
       <Container>
-        <div className="min-h-screen"></div>
+        <div
+          className="min-h-screen py-10"
+          dangerouslySetInnerHTML={{ __html: sanitize && sanitize(blogData) }}
+        ></div>
 
         <Link href={"/insights"}>
           <Button

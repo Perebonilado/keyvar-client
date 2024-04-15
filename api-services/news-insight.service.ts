@@ -1,7 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { API_BASE_URL } from "../constants";
 import { secondsToMilliSeconds } from "../utils";
-import { NewsLetterSubscriptionPayloadModel } from "@/models/Insight";
+import {
+  GetAllInsightsQueryModel,
+  InsightModel,
+  InsightQueryModel,
+  InsightSummaryModelResponse,
+  NewsLetterSubscriptionPayloadModel,
+} from "@/models/Insight";
+import { InsightDto, InsightSummaryDto } from "@/dto/insight.dto";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: `${API_BASE_URL}/news-insight/`,
@@ -11,6 +18,7 @@ const baseQuery = fetchBaseQuery({
 export const newsInsightService = createApi({
   reducerPath: "news-insight",
   baseQuery,
+  tagTypes: ["all-insights", "single-insight"],
   endpoints: (build) => ({
     subscribe: build.mutation<"", NewsLetterSubscriptionPayloadModel>({
       query: (body) => ({
@@ -19,7 +27,55 @@ export const newsInsightService = createApi({
         body,
       }),
     }),
+    getAllInsights: build.query<
+      InsightSummaryModelResponse,
+      GetAllInsightsQueryModel
+    >({
+      query: ({ category = "", page, pageSize }) => ({
+        url: `/posts`,
+        params: {
+          category,
+          page,
+          pageSize,
+        },
+      }),
+      providesTags: ["all-insights"],
+      transformResponse: (response: InsightSummaryDto) => {
+        if (!response) return <InsightSummaryModelResponse>{};
+        else {
+          return <InsightSummaryModelResponse>{
+            data: response.data.map((res) => {
+              return {
+                author: `${res.author.lastName ?? ""} ${
+                  res.author.firstName ?? ""
+                }`,
+                body: res.summary,
+                date: res.date,
+                id: res.id,
+                imageUrl: res.image,
+                title: res.title,
+              };
+            }),
+            totalCount: response.meta.totalCount,
+          };
+        }
+      },
+    }),
+    getInsight: build.query<InsightModel, InsightQueryModel>({
+      query: ({ id }) => ({
+        url: `/posts/${id}`,
+      }),
+      providesTags: ["single-insight"],
+      transformResponse: (res: InsightDto) => {
+        if (!res) return <InsightModel>{};
+        else return res;
+      },
+    }),
   }),
 });
 
-export const { useSubscribeMutation } = newsInsightService;
+export const {
+  useSubscribeMutation,
+  useGetAllInsightsQuery,
+  useGetInsightQuery,
+} = newsInsightService;

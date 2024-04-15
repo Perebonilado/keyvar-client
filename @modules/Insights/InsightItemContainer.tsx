@@ -1,18 +1,20 @@
 import Container from "@/@shared/ui-components/Container";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import InsightItem from "./InsightItem";
 import Button from "@/@shared/ui-components/Button";
 import SubscriptionCard from "./SubscriptionCard";
-import { Insight } from "@/models/Insight";
+import { InsightSummaryModel } from "@/models/Insight";
+import { useGetAllInsightsQuery } from "@/api-services/news-insight.service";
 
 const InsightItemContainer: FC = () => {
+  const { data: insights } = useGetAllInsightsQuery({ page: 1, pageSize: 10 });
   return (
     <section className="bg-[#020228]">
       <div className="bg-white rounded-t-xl py-14">
         <Container>
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6">
-            {dummyArticles.length ? (
-              dummyArticles.map((item, idx) => {
+            {insights?.data.length ? (
+              insights?.data.map((item, idx) => {
                 // Check if it's the third index or if there are not up to 3 items
                 if (
                   idx === 1 ||
@@ -67,4 +69,4 @@ const dummyArticles = [
     author: "Gloria Ogordi",
     date: "December 28, 2023",
   },
-] as Insight[];
+] as InsightSummaryModel[];
