@@ -9,6 +9,7 @@ import {
   NewsLetterSubscriptionPayloadModel,
 } from "@/models/Insight";
 import { InsightDto, InsightSummaryDto } from "@/dto/insight.dto";
+import * as moment from "moment";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: `${API_BASE_URL}/news-insight/`,
@@ -50,7 +51,7 @@ export const newsInsightService = createApi({
                   res.author.firstName ?? ""
                 }`,
                 body: res.summary,
-                date: res.date,
+                date: moment.utc(res.date).format('MMMM DD, YYYY'),
                 id: res.id,
                 imageUrl: res.image,
                 title: res.title,
