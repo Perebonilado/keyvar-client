@@ -21,7 +21,7 @@ export interface InsightSummaryDto {
   data: InsightSummary[];
   meta: {
     totalCount: number;
-    nextPage: string | null;
+    nextPage: number | null;
   };
 }
 

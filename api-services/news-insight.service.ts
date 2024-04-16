@@ -64,8 +64,6 @@ export const newsInsightService = createApi({
             }),
             totalCount: response.meta.totalCount,
             nextPage: response.meta.nextPage
-              ? Number(response.meta.nextPage)
-              : null,
           };
         }
       },
