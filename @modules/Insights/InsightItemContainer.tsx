@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 const InsightItemContainer: FC = () => {
   const router = useRouter();
   const [category, setCategory] = useState<string | null>(null);
-  const [pageSize, setPageSize] = useState(1);
+  const [pageSize, setPageSize] = useState(5);
   const { data: insights } = useGetAllInsightsQuery(
     { page: 1, pageSize, category: category ?? "" },
     { skip: category === null, refetchOnMountOrArgChange: true }
