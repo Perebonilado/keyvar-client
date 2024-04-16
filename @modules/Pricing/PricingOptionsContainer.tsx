@@ -3,11 +3,14 @@ import Tab from "./Tab";
 import Container from "@/@shared/ui-components/Container";
 import PricingCard from "./PricingCard";
 import pricingPlans from "../../json-data/pricing-plans.json";
-import { PricingCategory, PricingPlan } from "@/models/Pricing";
+import { PricingPlan } from "@/models/Pricing";
 import Button from "@/@shared/ui-components/Button";
+import { NavLinks } from "@/@shared/constants";
+import { useRouter } from "next/router";
 
 const PricingOptionsContainer: FC = () => {
   const [plans, setPlans] = useState([...pricingPlans] as PricingPlan[]);
+  const router = useRouter();
 
   const [activeTab, setActiveTab] = useState<string>("1");
   const tabs = [
@@ -37,6 +40,7 @@ const PricingOptionsContainer: FC = () => {
       );
     }
   }, [activeTab]);
+  
   return (
     <section>
       <Tab
@@ -53,7 +57,15 @@ const PricingOptionsContainer: FC = () => {
         </div>
         <div className="flex flex-col items-center justify-center gap-3 text-center w-full mx-auto sm:max-w-[300px] pb-16">
           <p>For more details on any of our services</p>
-          <Button title="Get in touch" fullWidth />
+
+          <Button
+            title="Get in touch"
+            fullWidth
+            onClick={() => {
+              router.push(NavLinks.leads.link);
+            }}
+            role="link"
+          />
         </div>
       </Container>
     </section>

@@ -1,11 +1,15 @@
 export const NavLinks = {
   services: {
     title: "Services",
-    link: "/services",
+    link: "/#services",
   },
   blog: {
     title: "Blog",
     link: "/blog",
+  },
+  leads: {
+    title: "Link",
+    link: "/leads",
   },
   privacyPolicy: {
     title: "Privary Policy",
@@ -29,7 +33,7 @@ export const NavLinks = {
   },
   contactUs: {
     title: "Contact us",
-    link: "/contact-us",
+    link: "/leads",
   },
   careers: {
     title: "Careers",
@@ -37,7 +41,7 @@ export const NavLinks = {
     subLinks: {
       apply: {
         title: "Apply",
-        link: '/careers/apply'
+        link: "/careers/apply",
       },
     },
   },

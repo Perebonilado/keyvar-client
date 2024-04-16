@@ -3,6 +3,8 @@ import teamMembersData from "../../json-data/team-members.json";
 import TeamMemberCard from "./TeamMemberCard";
 import Container from "@/@shared/ui-components/Container";
 import Button from "@/@shared/ui-components/Button";
+import Link from "next/link";
+import { NavLinks } from "@/@shared/constants";
 
 const TeamMemberCardContainer: FC = () => {
   return (
@@ -22,7 +24,10 @@ const TeamMemberCardContainer: FC = () => {
           </h2>
           <div className="w-full mx-auto max-w-[300px]">
             <p className="text-sm mb-3">Explore our open roles:</p>
-            <Button title="Careers" fullWidth />
+
+            <Link href={NavLinks.careers.link}>
+              <Button title="Careers" fullWidth />
+            </Link>
           </div>
         </div>
       </Container>

@@ -6,10 +6,12 @@ import SEOIcon from "@/icons/SEOIcon";
 import SocialMediaManagementIcon from "@/icons/SocialMediaManagementIcon";
 import ServiceCardContainer from "../ServiceCardContainer";
 import Button from "@/@shared/ui-components/Button";
+import Link from "next/link";
+import { NavLinks } from "@/@shared/constants";
 
 const HelpClients: FC = () => {
   return (
-    <div className="bg-[#020228] text-white">
+    <div className="bg-[#020228] text-white" id="services">
       <Container className={`${s.bg} min-h-screen relative py-24`}>
         <h2 className="text-center text-4xl font-semibold">
           How we help clients
@@ -24,11 +26,14 @@ const HelpClients: FC = () => {
           {" "}
           I see a service i'm interested in:
         </p>
-        <Button
-          title="View pricing"
-          size="large"
-          className="!w-[300px] !py-2 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2"
-        />
+
+        <Link href={NavLinks.pricing.link}>
+          <Button
+            title="View pricing"
+            size="large"
+            className="!w-[300px] !py-2 absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2"
+          />
+        </Link>
       </Container>
     </div>
   );

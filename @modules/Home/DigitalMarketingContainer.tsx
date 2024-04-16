@@ -1,5 +1,7 @@
+import { NavLinks } from "@/@shared/constants";
 import Button from "@/@shared/ui-components/Button";
 import Container from "@/@shared/ui-components/Container";
+import Link from "next/link";
 import React, { FC } from "react";
 
 const DigitalMarketingContainer: FC = () => {
@@ -20,7 +22,14 @@ const DigitalMarketingContainer: FC = () => {
                 </i>
               </p>
 
-              <Button title="Learn more" variant="outlined" size="large" className="mt-16"/>
+              <Link href={NavLinks.pricing.link}>
+                <Button
+                  title="Learn more"
+                  variant="outlined"
+                  size="large"
+                  className="mt-16"
+                />
+              </Link>
             </div>
           </div>
 

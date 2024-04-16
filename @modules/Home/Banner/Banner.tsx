@@ -5,6 +5,8 @@ import React, { FC } from "react";
 import styles from "./styles.module.css";
 import PattronImage from "../PattronImage";
 import FrannemsImage from "../FrannemsImage";
+import Link from "next/link";
+import { NavLinks } from "@/@shared/constants";
 
 const Banner: FC = () => {
   return (
@@ -22,12 +24,14 @@ const Banner: FC = () => {
             make your goals a reality.
           </p>
 
-          <Button
-            title="Get in touch"
-            size="large"
-            className="w-full max-sm:max-w-[unset] sm:max-w-[350px] max-sm:w-full !text-base !justify-between"
-            endicon={<ArrowRight />}
-          />
+          <Link href={NavLinks.leads.link}>
+            <Button
+              title="Get in touch"
+              size="large"
+              className="w-full max-sm:max-w-[unset] sm:max-w-[350px] max-sm:w-full !text-base !justify-between"
+              endicon={<ArrowRight />}
+            />
+          </Link>
         </div>
         <PattronImage />
         <FrannemsImage />
