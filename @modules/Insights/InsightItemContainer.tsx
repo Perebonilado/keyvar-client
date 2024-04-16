@@ -33,7 +33,7 @@ const InsightItemContainer: FC = () => {
     <section className="bg-[#020228]">
       <div className="bg-white rounded-t-xl py-14">
         <Container>
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6 max-sm:flex max-sm:flex-col max-sm:items-center">
             {insights?.data.length ? (
               insights?.data.map((item, idx) => {
                 // Check if it's the third index or if there are not up to 3 items

@@ -39,7 +39,7 @@ const InsightSubBanner: FC = () => {
           <div className="max-sm:px-5">
             <BreadCrumb />
           </div>
-          <div className="w-full max-w-[300px] max-sm:max-w-full">
+          <div className="w-full max-w-[300px] max-sm:max-w-full max-sm:mt-4">
             <DropDown
               variant="regular"
               options={options}
