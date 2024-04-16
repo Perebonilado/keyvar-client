@@ -8,8 +8,13 @@ import {
   InsightSummaryModelResponse,
   NewsLetterSubscriptionPayloadModel,
 } from "@/models/Insight";
-import { InsightDto, InsightSummaryDto } from "@/dto/insight.dto";
+import {
+  InsightCategoryDto,
+  InsightDto,
+  InsightSummaryDto,
+} from "@/dto/insight.dto";
 import * as moment from "moment";
+import { LookUp } from "@/models/Lookup";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: `${API_BASE_URL}/news-insight/`,
@@ -19,7 +24,7 @@ const baseQuery = fetchBaseQuery({
 export const newsInsightService = createApi({
   reducerPath: "news-insight",
   baseQuery,
-  tagTypes: ["all-insights", "single-insight"],
+  tagTypes: ["all-insights", "single-insight", "insight-categories"],
   endpoints: (build) => ({
     subscribe: build.mutation<"", NewsLetterSubscriptionPayloadModel>({
       query: (body) => ({
@@ -51,7 +56,7 @@ export const newsInsightService = createApi({
                   res.author.firstName ?? ""
                 }`,
                 body: res.summary,
-                date: moment.utc(res.date).format('MMMM DD, YYYY'),
+                date: moment.utc(res.date).format("MMMM DD, YYYY"),
                 id: res.id,
                 imageUrl: res.image,
                 title: res.title,
@@ -72,6 +77,18 @@ export const newsInsightService = createApi({
         else return res;
       },
     }),
+    getInsightCategories: build.query<LookUp[], "">({
+      query: () => ({
+        url: "/categories",
+      }),
+      providesTags: ["insight-categories"],
+      transformResponse: (res: InsightCategoryDto[]) => {
+        if (!res) return <LookUp[]>[];
+        else {
+          return res.map((res) => ({ label: res.name, value: res.value }));
+        }
+      },
+    }),
   }),
 });
 
@@ -79,4 +96,5 @@ export const {
   useSubscribeMutation,
   useGetAllInsightsQuery,
   useGetInsightQuery,
+  useGetInsightCategoriesQuery
 } = newsInsightService;

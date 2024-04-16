@@ -34,3 +34,8 @@ export interface InsightDto {
   };
   body: string;
 }
+
+export interface InsightCategoryDto {
+  name: string;
+  value: string;
+}

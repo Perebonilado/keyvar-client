@@ -1,9 +1,11 @@
 import BreadCrumb from "@/@shared/components/BreadCrumb/BreadCrumb";
 import Container from "@/@shared/ui-components/Container";
 import DropDown from "@/@shared/ui-components/Input/DropDown";
+import { useGetInsightCategoriesQuery } from "@/api-services/news-insight.service";
 import React, { FC } from "react";
 
 const InsightSubBanner: FC = () => {
+  const { data: categories } = useGetInsightCategoriesQuery("");
   return (
     <section className="bg-[#020228] py-8 max-sm:pb-3 max-sm:pt-0">
       <Container className="max-sm:px-0">
@@ -12,10 +14,7 @@ const InsightSubBanner: FC = () => {
             <BreadCrumb />
           </div>
           <div className="w-full max-w-[300px] max-sm:max-w-full">
-            <DropDown
-              variant="regular"
-              options={[{ label: "All", value: "" }]}
-            />
+            <DropDown variant="regular" options={categories ?? []} />
           </div>
         </div>
       </Container>

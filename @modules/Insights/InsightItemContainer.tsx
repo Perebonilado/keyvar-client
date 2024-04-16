@@ -3,7 +3,6 @@ import React, { FC } from "react";
 import InsightItem from "./InsightItem";
 import Button from "@/@shared/ui-components/Button";
 import SubscriptionCard from "./SubscriptionCard";
-import { InsightSummaryModel } from "@/models/Insight";
 import { useGetAllInsightsQuery } from "@/api-services/news-insight.service";
 
 const InsightItemContainer: FC = () => {
@@ -18,7 +17,7 @@ const InsightItemContainer: FC = () => {
                 // Check if it's the third index or if there are not up to 3 items
                 if (
                   idx === 1 ||
-                  (idx === dummyArticles.length - 1 && idx < 2)
+                  (idx === insights.data.length - 1 && idx < 2)
                 ) {
                   return (
                     <React.Fragment key={idx}>
@@ -46,27 +45,4 @@ const InsightItemContainer: FC = () => {
 
 export default InsightItemContainer;
 
-const dummyArticles = [
-  {
-    imageUrl: "/assets/shared/article-pic.jpg",
-    title:
-      "The impact of Multicollinearity in Marketing Mix Modeling: The Role of Ridge Regression",
-    body: "In the ever-evolving landscape of marketing, understanding the effectiveness of your strategies is para In the ever-evolving landscape of marketing, understanding the effectiveness of your strategies is",
-    author: "Kalada Nemieboka",
-    date: "December 28, 2023",
-  },
-  {
-    imageUrl: "/assets/shared/article-pic.jpg",
-    title: "Copywriting for social media",
-    body: "In the ever-evolving landscape of marketing, understanding the effectiveness of your strategies is para In the ever-evolving landscape of marketing, understanding the effectiveness of your strategies is",
-    author: "Gloria Ogordi",
-    date: "December 28, 2023",
-  },
-  {
-    imageUrl: "/assets/shared/article-pic.jpg",
-    title: "Useful tips for avoiding multicollinearity",
-    body: "In the ever-evolving landscape of marketing, understanding the effectiveness of your strategies is para In the ever-evolving landscape of marketing, understanding the effectiveness of your strategies is",
-    author: "Gloria Ogordi",
-    date: "December 28, 2023",
-  },
-] as InsightSummaryModel[];
+
