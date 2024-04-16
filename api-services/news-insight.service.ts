@@ -63,6 +63,9 @@ export const newsInsightService = createApi({
               };
             }),
             totalCount: response.meta.totalCount,
+            nextPage: response.meta.nextPage
+              ? Number(response.meta.nextPage)
+              : null,
           };
         }
       },
@@ -85,7 +88,7 @@ export const newsInsightService = createApi({
       transformResponse: (res: InsightCategoryDto[]) => {
         if (!res) return <LookUp[]>[];
         else {
-          return res.map((res) => ({ label: res.name, value: res.value }));
+          return res.map((res) => ({ label: res.name, value: res.id }));
         }
       },
     }),
@@ -96,5 +99,5 @@ export const {
   useSubscribeMutation,
   useGetAllInsightsQuery,
   useGetInsightQuery,
-  useGetInsightCategoriesQuery
+  useGetInsightCategoriesQuery,
 } = newsInsightService;

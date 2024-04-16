@@ -47,7 +47,6 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const handleShowErrorModal = () => {
     const errorMessages: string[] = [];
     apiQueriesToWatch.forEach((query) => {
-      console.log(query);
       if (query?.error && "data" in query?.error) {
         const { message }: any = query.error.data;
         errorMessages.push(message);
@@ -70,7 +69,6 @@ const AppLoaderProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   useEffect(() => {
     handleSetLoadingState();
     handleShowErrorModal();
-    console.log(apiQueriesToWatch);
   }, [JSON.stringify(apiQueriesToWatch)]);
 
   return (

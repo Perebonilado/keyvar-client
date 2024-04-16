@@ -1,13 +1,20 @@
 import ScrollableIcon from "@/icons/ScrollableIcon";
-import React, { ElementRef, FC, useRef, useState } from "react";
+import React, { ElementRef, FC, useRef, useState, useEffect } from "react";
 import DropDownItem from "./DropDownItem";
 import useClickOutside from "@/hooks/useClickOutside";
 import cn from "classnames";
 import ChevronDown from "@/icons/ChevronDown";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  options: { label: string; value: string }[];
-  handleSelect?: ({ label, value }: { label: string; value: string }) => void;
+  options: { label: string; value: string; defaultSelected?: boolean }[];
+  handleSelect?: ({
+    label,
+    value,
+  }: {
+    label: string;
+    value: string;
+    defaultSelected?: boolean;
+  }) => void;
   placeholder?: string;
   label?: string;
   error?: string;
@@ -40,6 +47,42 @@ const DropDown: FC<Props> = ({
     }
   );
 
+  const onSelect = (val: {
+    label: string;
+    value: string;
+    defaultSelected?: boolean | undefined;
+  }) => {
+    handleSelect && handleSelect(val);
+    setOptionsOpen(false);
+    if (mirrorInputRef.current) {
+      mirrorInputRef.current.value = val.label;
+    }
+
+    // this sets the value property and then we are able to properly dispatch the input event so this component
+    // can be properly integrated with formik
+
+    if (mainInputRef.current && window) {
+      try {
+        Object?.getOwnPropertyDescriptor(
+          window.HTMLInputElement.prototype,
+          "value"
+        )?.set?.call(mainInputRef.current, val.value);
+
+        const event = new Event("input", { bubbles: true });
+        mainInputRef.current.dispatchEvent(event);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const defaultOption = options.find((opt) => opt.defaultSelected);
+    if (defaultOption) {
+      onSelect(defaultOption);
+    }
+  }, [JSON.stringify(options)]);
+
   return (
     <>
       {label && (
@@ -67,34 +110,7 @@ const DropDown: FC<Props> = ({
         {isOptionsOpen && (
           <div className="w-full absolute left-0 top-[calc(100%+5px)] px-4 bg-white rounded-md cursor-pointer shadow-md">
             {options.map((opt, idx) => (
-              <DropDownItem
-                {...opt}
-                onSelect={(val) => {
-                  handleSelect && handleSelect(val);
-                  setOptionsOpen(false);
-                  if (mirrorInputRef.current) {
-                    mirrorInputRef.current.value = val.label;
-                  }
-
-                  // this sets the value property and then we are able to properly dispatch the input event so this component
-                  // can be properly integrated with formik
-
-                  if (mainInputRef.current && window) {
-                    try {
-                      Object?.getOwnPropertyDescriptor(
-                        window.HTMLInputElement.prototype,
-                        "value"
-                      )?.set?.call(mainInputRef.current, val.value);
-
-                      const event = new Event("input", { bubbles: true });
-                      mainInputRef.current.dispatchEvent(event);
-                    } catch (error) {
-                      console.log(error);
-                    }
-                  }
-                }}
-                key={idx}
-              />
+              <DropDownItem {...opt} onSelect={(e) => onSelect(e)} key={idx} />
             ))}
           </div>
         )}

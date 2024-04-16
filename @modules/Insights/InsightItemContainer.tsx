@@ -1,12 +1,34 @@
 import Container from "@/@shared/ui-components/Container";
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import InsightItem from "./InsightItem";
 import Button from "@/@shared/ui-components/Button";
 import SubscriptionCard from "./SubscriptionCard";
 import { useGetAllInsightsQuery } from "@/api-services/news-insight.service";
+import { useRouter } from "next/router";
 
 const InsightItemContainer: FC = () => {
-  const { data: insights } = useGetAllInsightsQuery({ page: 1, pageSize: 10 });
+  const router = useRouter();
+  const [category, setCategory] = useState<string | null>(null);
+  const [pageSize, setPageSize] = useState(1);
+  const { data: insights } = useGetAllInsightsQuery(
+    { page: 1, pageSize, category: category ?? "" },
+    { skip: category === null, refetchOnMountOrArgChange: true }
+  );
+
+  useEffect(() => {
+    if (router.query.category) {
+      setCategory(router.query.category as string);
+    } else {
+      setCategory("");
+    }
+  }, [router.query]);
+
+  const handleViewMore = () => {
+    if (insights && insights.totalCount > pageSize) {
+      setPageSize(() => pageSize + 5);
+    }
+  };
+
   return (
     <section className="bg-[#020228]">
       <div className="bg-white rounded-t-xl py-14">
@@ -35,7 +57,9 @@ const InsightItemContainer: FC = () => {
           </div>
 
           <div className="w-full max-w-[300px] mx-auto mt-32 mb-10">
-            <Button title="View more" fullWidth />
+            {insights && insights.totalCount > pageSize ? (
+              <Button title="View more" fullWidth onClick={handleViewMore} />
+            ) : null}
           </div>
         </Container>
       </div>
@@ -44,5 +68,3 @@ const InsightItemContainer: FC = () => {
 };
 
 export default InsightItemContainer;
-
-

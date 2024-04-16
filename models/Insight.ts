@@ -15,6 +15,7 @@ export interface NewsLetterSubscriptionPayloadModel {
 export interface InsightSummaryModelResponse {
   data: InsightSummaryModel[];
   totalCount: number;
+  nextPage: number | null;
 }
 
 export interface GetAllInsightsQueryModel {
