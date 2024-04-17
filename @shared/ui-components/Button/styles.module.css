@@ -3,15 +3,17 @@
 }
 
 .contained.primary {
-    @apply text-white bg-[#2C00B9] rounded-full border border-[#2C00B9]
+    @apply text-white bg-[#2C00B9] rounded-full border border-[#2C00B9];
+    font-family: "Literata", serif !important;
 }
 
 .outlined.primary {
-    @apply border-2 border-[#2C00B9] text-[#2C00B9] bg-transparent
+    @apply border-2 border-[#2C00B9] text-[#2C00B9] bg-transparent;
+    font-family: "Literata", serif !important;
 }
 
 .text.primary {
-    @apply text-[#2C00B9] border-none !p-0
+    @apply text-[#2C00B9] border-none !p-0;
 }
 
 .text.secondary {

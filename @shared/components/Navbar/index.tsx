@@ -42,7 +42,11 @@ const Navbar: FC = () => {
               className="flex items-center justify-end max-md:hidden"
             >
               <Link href={NavLinks.contactUs.link}>
-                <Button variant="text" title={NavLinks.contactUs.title} />
+                <Button
+                  variant="text"
+                  style={{ fontFamily: "Literata, serif !important" }}
+                  title={NavLinks.contactUs.title}
+                />
               </Link>
             </div>
             <Hamburger
