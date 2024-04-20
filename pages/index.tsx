@@ -3,6 +3,7 @@ import DigitalMarketingContainer from "@/@modules/Home/DigitalMarketingContainer
 import FieldFocusContainer from "@/@modules/Home/FieldFocusContainer";
 import HelpClients from "@/@modules/Home/HelpClients/HelpClients";
 import OurApproachContainer from "@/@modules/Home/OurApproachContainer";
+import ReviewsSection from "@/@modules/Home/ReviewsSection";
 import AppHead from "@/@shared/components/AppHead";
 import AppLayout from "@/@shared/layout/AppLayout";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <DigitalMarketingContainer />
         <OurApproachContainer />
         <FieldFocusContainer />
+        <ReviewsSection />
       </AppLayout>
     </>
   );
