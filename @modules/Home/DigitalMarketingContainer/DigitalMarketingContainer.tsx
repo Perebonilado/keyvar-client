@@ -10,6 +10,18 @@ import s from "./styles.module.css";
 const DigitalMarketingContainer: FC = () => {
   return (
     <section className="py-20 relative">
+      <div className="absolute w-full h-full max-lg:hidden">
+        <div className="relative w-[700px] h-[60%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+          <Image
+            layout="fill"
+            objectFit="contain"
+            objectPosition="50% 50%"
+            alt="background image"
+            src={"/assets/shared/arrow.png"}
+          />
+        </div>
+      </div>
+
       <Container>
         <div className="flex max-md:flex-col pt-10 max-md:gap-16">
           <div style={{ flex: 1 }}>
