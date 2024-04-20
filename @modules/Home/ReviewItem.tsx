@@ -17,9 +17,9 @@ const ReviewItem: FC<Props> = ({
   logo,
 }) => {
   const cardStyling = cn(
-    `relative cursor-pointer w-[350px] h-[500px] border border-[#7D7D7D] rounded-xl bg-white transition-transform p-3 flex flex-col gap-6 `,
+    `relative cursor-pointer w-[350px] max-sm:w-[320px] h-[500px] border border-[#7D7D7D] rounded-xl bg-white transition-transform p-3 flex flex-col gap-6 `,
     {
-      "scale-[0.8] opacity-[0.4]": !isActive,
+      "scale-[0.85] opacity-[0.4]": !isActive,
     }
   );
   return (

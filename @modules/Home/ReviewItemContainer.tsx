@@ -11,10 +11,11 @@ interface Props {
 const ReviewItemContainer: FC<Props> = ({ data, handleClick }) => {
   const sliderRef = useRef<ElementRef<"div">>(null);
   const sliderContainerRef = useRef<ElementRef<"div">>(null);
+  const reviewCardWidthPx = 320
 
   const onSlideChange = (id: string, idx: number) => {
     const index = idx;
-    const newXtranslateNumber = index * 350;
+    const newXtranslateNumber = index * reviewCardWidthPx;
 
     if (sliderRef.current) {
       sliderRef.current.style.transform = `translateX(-${newXtranslateNumber}px)`;
