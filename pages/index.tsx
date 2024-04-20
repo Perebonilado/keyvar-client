@@ -1,6 +1,7 @@
 import Banner from "@/@modules/Home/Banner/Banner";
 import DigitalMarketingContainer from "@/@modules/Home/DigitalMarketingContainer/DigitalMarketingContainer";
 import HelpClients from "@/@modules/Home/HelpClients/HelpClients";
+import OurApproachContainer from "@/@modules/Home/OurApproachContainer";
 import AppHead from "@/@shared/components/AppHead";
 import AppLayout from "@/@shared/layout/AppLayout";
 
@@ -12,6 +13,7 @@ export default function Home() {
         <Banner />
         <HelpClients />
         <DigitalMarketingContainer />
+        <OurApproachContainer />
       </AppLayout>
     </>
   );
