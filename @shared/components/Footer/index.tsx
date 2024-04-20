@@ -69,7 +69,7 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
               <Link href={NavLinks.aboutUs.link}>
                 <span className="font-semibold">{NavLinks.aboutUs.title}</span>
               </Link>
-              <Link href={NavLinks.blog.link}>
+              <Link href={NavLinks.insights.link}>
                 <span className="font-semibold">{NavLinks.blog.title}</span>
               </Link>
               <Link href={NavLinks.careers.link}>
