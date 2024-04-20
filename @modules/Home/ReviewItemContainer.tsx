@@ -1,19 +1,20 @@
 import React, { FC, useRef, useState, ElementRef } from "react";
 import ReviewItem from "./ReviewItem";
 import ReviewMarker from "./ReviewMarker";
+import { ReviewModel } from "@/models/review";
 
 interface Props {
-  data: { id: number; isActive: boolean }[];
-  handleClick: (data: { id: number; isActive: boolean }[]) => void;
+  data: ReviewModel[];
+  handleClick: (data: ReviewModel[]) => void;
 }
 
 const ReviewItemContainer: FC<Props> = ({ data, handleClick }) => {
   const sliderRef = useRef<ElementRef<"div">>(null);
   const sliderContainerRef = useRef<ElementRef<"div">>(null);
 
-  const onSlideChange = (id: number, idx: number) => {
+  const onSlideChange = (id: string, idx: number) => {
     const index = idx;
-    const newXtranslateNumber = index * 320;
+    const newXtranslateNumber = index * 350;
 
     if (sliderRef.current) {
       sliderRef.current.style.transform = `translateX(-${newXtranslateNumber}px)`;
@@ -46,7 +47,7 @@ const ReviewItemContainer: FC<Props> = ({ data, handleClick }) => {
           })}
         </div>
       </div>
-      <div className="w-fit mx-auto flex items-center gap-2 py-4 absolute bottom-0 left-0 translate-x-[115px] max-md:translate-x-[110px]">
+      <div className="w-fit mx-auto flex items-center gap-2 py-4 absolute bottom-0 left-0 translate-x-[140px] max-md:translate-x-[120px]">
         {data.map((item, idx) => {
           return (
             <ReviewMarker

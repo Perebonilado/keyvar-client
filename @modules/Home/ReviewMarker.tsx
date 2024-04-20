@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import cn from "classnames";
+import { ReviewModel } from "@/models/review";
 
-interface Props {
-  id: number;
-  isActive: boolean;
-  handleClick: (id: number) => void;
+interface Props extends ReviewModel {
+  handleClick: (id: string) => void;
 }
+
 
 const ReviewMarker: FC<Props> = ({ handleClick, id, isActive }) => {
   const styling = cn(`border cursor-pointer rounded-full border-[#2C00B9] h-[8px] transition-all`, {
