@@ -4,7 +4,7 @@ import FieldFocusItem from "./FieldFocusItem";
 
 const FieldFocusContainer: FC = () => {
   return (
-    <section className="py-20">
+    <section className="pb-20">
       <Container>
         <h2 className="text-3xl font-semibold">Our field focus</h2>
 
