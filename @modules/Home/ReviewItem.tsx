@@ -2,13 +2,9 @@ import React, { FC } from "react";
 import cn from "classnames";
 import { ReviewModel } from "@/models/review";
 import Image from "next/image";
-import ReviewMarker from "./ReviewMarker";
 
 interface Props extends ReviewModel {
   handleClick: (id: string) => void;
-  idx: number;
-  onSlideChange: (id: string, idx: number) => void;
-  data: ReviewModel[];
 }
 
 const ReviewItem: FC<Props> = ({
@@ -19,9 +15,6 @@ const ReviewItem: FC<Props> = ({
   subBody,
   title,
   logo,
-  idx,
-  data,
-  onSlideChange,
 }) => {
   const cardStyling = cn(
     `relative cursor-pointer w-[350px] h-[500px] border border-[#7D7D7D] rounded-xl bg-white transition-transform p-3 flex flex-col gap-6 `,
@@ -71,21 +64,6 @@ const ReviewItem: FC<Props> = ({
           </div>
         </div>
       </div>
-      {isActive && (
-        <div className="w-fit mx-auto flex items-center gap-2 mt-3">
-          {data.map((item, idx) => {
-            return (
-              <ReviewMarker
-                {...item}
-                key={idx}
-                handleClick={(id) => {
-                  onSlideChange(id, idx);
-                }}
-              />
-            );
-          })}
-        </div>
-      )}
     </div>
   );
 };

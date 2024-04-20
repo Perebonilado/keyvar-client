@@ -1,6 +1,7 @@
 import React, { FC, useRef, ElementRef } from "react";
 import ReviewItem from "./ReviewItem";
 import { ReviewModel } from "@/models/review";
+import ReviewMarker from "./ReviewMarker";
 
 interface Props {
   data: ReviewModel[];
@@ -28,9 +29,14 @@ const ReviewItemContainer: FC<Props> = ({ data, handleClick }) => {
 
   return (
     <>
-      <div className="overflow-x-hidden w-full flex justify-center" ref={sliderContainerRef}>
+      <div
+        className="overflow-x-hidden w-full flex justify-center"
+        ref={sliderContainerRef}
+      >
         <div
-          className={"w-fit min-w-full flex justify-center py-14 transition-transform"}
+          className={
+            "w-fit min-w-full flex justify-center py-14 transition-transform"
+          }
           ref={sliderRef}
         >
           {data.map((item, idx) => {
@@ -41,13 +47,24 @@ const ReviewItemContainer: FC<Props> = ({ data, handleClick }) => {
                   onSlideChange(id, idx);
                 }}
                 key={idx}
-                idx={idx}
-                onSlideChange={onSlideChange}
-                data={data}
               />
             );
           })}
         </div>
+
+        </div>
+        <div className="mx-auto w-fit flex items-center gap-2">
+          {data.map((item, idx) => {
+            return (
+              <ReviewMarker
+                {...item}
+                key={idx}
+                handleClick={(id) => {
+                  onSlideChange(id, idx);
+                }}
+              />
+            );
+          })}
       </div>
     </>
   );
