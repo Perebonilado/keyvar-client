@@ -38,7 +38,7 @@ const DigitalMarketingContainer: FC = () => {
 
           <div
             style={{ flex: 1 }}
-            className={`flex flex-col justify-end items-end mt-[250px] max-md:mt-0 ${s.founderBgContainer}`}
+            className={`flex flex-col justify-end items-end mt-[300px] max-md:mt-0 ${s.founderBgContainer}`}
           >
             <div className="flex flex-col items-end pb-10">
               <Avatar
