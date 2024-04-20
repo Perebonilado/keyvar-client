@@ -33,12 +33,12 @@ const ReviewsSection: FC = () => {
   return (
     <section className="bg-[#020228] pt-16">
       <div className="bg-[#FBF9F0] rounded-t-3xl py-20 text-center">
-        <Container className="relative overflow-x-hidden">
+        <Container className="relative">
           <h2 className="text-4xl max-md:text-3xl font-semibold">
             What our clients say
           </h2>
 
-          <div className="w-full max-w-[800px] translate-x-[30%] max-md:translate-x-[3%] mx-auto">
+          <div className="w-full  mx-auto">
             <ReviewItemContainer data={data} handleClick={handleClickCard} />
           </div>
         </Container>

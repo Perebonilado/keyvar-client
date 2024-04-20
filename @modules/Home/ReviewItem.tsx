@@ -2,9 +2,13 @@ import React, { FC } from "react";
 import cn from "classnames";
 import { ReviewModel } from "@/models/review";
 import Image from "next/image";
+import ReviewMarker from "./ReviewMarker";
 
 interface Props extends ReviewModel {
   handleClick: (id: string) => void;
+  idx: number;
+  onSlideChange: (id: string, idx: number) => void;
+  data: ReviewModel[];
 }
 
 const ReviewItem: FC<Props> = ({
@@ -15,53 +19,73 @@ const ReviewItem: FC<Props> = ({
   subBody,
   title,
   logo,
+  idx,
+  data,
+  onSlideChange,
 }) => {
   const cardStyling = cn(
-    `relative cursor-pointer w-[350px] h-[500px] border border-[#7D7D7D] rounded-xl bg-white transition-transform p-3 flex flex-col gap-6`,
+    `relative cursor-pointer w-[350px] h-[500px] border border-[#7D7D7D] rounded-xl bg-white transition-transform p-3 flex flex-col gap-6 `,
     {
       "scale-[0.8] opacity-[0.4]": !isActive,
     }
   );
   return (
-    <div
-      onClick={() => {
-        handleClick(id);
-      }}
-      className={cardStyling}
-    >
-      <p className="mt-14 font-semibold">{title}</p>
-      <p className="text-[#7D7D7D] text-[15px]">{body}</p>
-      <p className="text-[#7D7D7D] text-[15px]">{subBody}</p>
+    <div className="translate-x-1/2">
+      <div
+        onClick={() => {
+          handleClick(id);
+        }}
+        className={cardStyling}
+      >
+        <p className="mt-14 font-semibold">{title}</p>
+        <p className="text-[#7D7D7D] text-[15px]">{body}</p>
+        <p className="text-[#7D7D7D] text-[15px]">{subBody}</p>
 
-      <div className="border-t-[3px] border-t-[#2C00B9] pt-6">
-        <div className="relative w-full h-[60px]">
-          <Image
-            layout="fill"
-            objectFit="contain"
-            objectPosition="50% 0%"
-            style={{
-              cursor: "pointer",
-            }}
-            src={logo}
-            alt={"business logo"}
-          />
+        <div className="border-t-[3px] border-t-[#2C00B9] pt-6">
+          <div className="relative w-full h-[60px]">
+            <Image
+              layout="fill"
+              objectFit="contain"
+              objectPosition="50% 0%"
+              style={{
+                cursor: "pointer",
+              }}
+              src={logo}
+              alt={"business logo"}
+            />
+          </div>
+        </div>
+
+        <div className="absolute top-12 left-1/2 -translate-x-1/2">
+          <div className="relative w-[250px] h-[80px]">
+            <Image
+              layout="fill"
+              objectFit="contain"
+              objectPosition="50% 0%"
+              style={{
+                cursor: "pointer",
+              }}
+              src={"/assets/shared/quotes.png"}
+              alt={"business logo"}
+            />
+          </div>
         </div>
       </div>
-
-      <div className="absolute top-12 left-1/2 -translate-x-1/2">
-        <div className="relative w-[250px] h-[80px]">
-          <Image
-            layout="fill"
-            objectFit="contain"
-            objectPosition="50% 0%"
-            style={{
-              cursor: "pointer",
-            }}
-            src={"/assets/shared/quotes.png"}
-            alt={"business logo"}
-          />
+      {isActive && (
+        <div className="w-fit mx-auto flex items-center gap-2 mt-3">
+          {data.map((item, idx) => {
+            return (
+              <ReviewMarker
+                {...item}
+                key={idx}
+                handleClick={(id) => {
+                  onSlideChange(id, idx);
+                }}
+              />
+            );
+          })}
         </div>
-      </div>
+      )}
     </div>
   );
 };
