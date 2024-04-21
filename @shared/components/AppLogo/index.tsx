@@ -10,7 +10,7 @@ export const AppLogo: FC = () => {
         <Image
           layout="fill"
           objectFit="contain"
-          objectPosition="-50% 50%"
+          objectPosition="0% 50%"
           style={{
             cursor: "pointer",
           }}

@@ -26,7 +26,7 @@ const ViewInsightBanner: FC<Props> = ({ title, author, authorImage }) => {
   return (
     <section className="bg-[#020228]">
       <Container className="pt-20 pb-10">
-        <h1 className="text-3xl max-md:text-2xl leading-relaxed text-white font-bold w-full max-w-[610px]">
+        <h1 className="text-4xl max-md:text-2xl leading-relaxed text-white font-bold w-full max-w-[610px]">
           {title}
         </h1>
 
