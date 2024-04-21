@@ -9,7 +9,7 @@ interface Props {
 const OurApproachItem: FC<Props> = ({ body, subTitle, title }) => {
   return (
     <div className="w-full z-1 relative max-w-[350px] h-[110px] bg-[#FBF9F0] rounded-xl p-3 text-sm flex flex-col justify-end">
-      <div className="flex flex-col absolute border border-[#2C00B9] w-1/2 h-[70px] left-0 -top-[64%] translate-y-1/2 rounded-xl">
+      <div className="flex flex-col absolute border-[2px] border-[#2C00B9] w-1/2 h-[70px] left-0 -top-[64%] translate-y-1/2 rounded-xl">
         <p
           className="text-semibold font-semibold flex items-center px-2"
           style={{ flex: 1 }}

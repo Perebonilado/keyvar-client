@@ -12,7 +12,7 @@ const Banner: FC = () => {
   return (
     <section className={styles.banner}>
       <Container className="relative">
-        <div className="flex flex-col justify-center w-full max-w-[800px] py-20">
+        <div className="flex flex-col justify-center w-full max-w-[800px] py-20 !pt-0 max-md:-mt-10">
           <h1 className="text-5xl max-md:text-3xl leading-snug font-bold">
             We help elevate your brand with{" "}
             <span className="text-[#2C00B9]">strategic digital solutions</span>

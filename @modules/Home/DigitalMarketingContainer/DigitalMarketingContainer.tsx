@@ -10,12 +10,12 @@ import s from "./styles.module.css";
 const DigitalMarketingContainer: FC = () => {
   return (
     <section className="py-20 relative">
-      <div className="absolute w-full h-full max-lg:hidden">
-        <div className="relative w-[700px] h-[60%] top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+      <div className="absolute w-full h-full ">
+        <div className="relative max-w-screen-xl max-sm:max-w-[350px] px-10  h-[60%] max-h-[300px] top-[55%] max-sm:top-[47.5%] -translate-y-1/2 left-1/2 -translate-x-1/2">
           <Image
             layout="fill"
             objectFit="contain"
-            objectPosition="50% 50%"
+            objectPosition="50% 0%"
             alt="background image"
             src={"/assets/shared/arrow.png"}
           />
@@ -23,7 +23,7 @@ const DigitalMarketingContainer: FC = () => {
       </div>
 
       <Container>
-        <div className="flex max-md:flex-col pt-10 max-md:gap-16">
+        <div className="flex max-md:flex-col pt-10">
           <div style={{ flex: 1 }}>
             <div className="w-full max-w-[600px]">
               <h2 className="text-5xl font-bold leading-relaxed mb-4 max-md:text-3xl">
@@ -50,14 +50,15 @@ const DigitalMarketingContainer: FC = () => {
 
           <div
             style={{ flex: 1 }}
-            className={`flex flex-col justify-end items-end mt-[300px] max-md:mt-0 ${s.founderBgContainer}`}
+            className={`flex flex-col justify-end items-end mt-[400px] max-md:mt-[200px] ${s.founderBgContainer}`}
           >
             <div className="flex flex-col items-end pb-10">
               <Avatar
                 alt="Founder's Image: Kalada Nemieboka"
                 fallBack="Kalada"
-                imageUrl="/assets/about-us/kalada.png"
+                imageUrl="/assets/home/kalada.png"
                 size="lg"
+                slateBg={false}
               />
               <p className="mt-3 font-bold">Kalada Nemieboka</p>
               <p className="text-sm">Founder and Senior Analytics Consultant</p>

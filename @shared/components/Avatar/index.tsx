@@ -9,7 +9,8 @@ interface Props {
   fallBack: string;
   shape?: "round" | "square";
   allowEnlarge?: boolean;
-  alt: string
+  alt: string;
+  slateBg?: boolean;
 }
 
 const Avatar: FC<Props> = ({
@@ -17,7 +18,8 @@ const Avatar: FC<Props> = ({
   imageUrl,
   fallBack,
   shape = "round",
-  alt
+  alt,
+  slateBg = true,
 }) => {
   const rootClassName = c(s.root, {
     [s.sm]: size === "sm",
@@ -25,12 +27,11 @@ const Avatar: FC<Props> = ({
     [s.lg]: size === "lg",
     [s.round]: shape === "round",
     [s.square]: shape === "square",
+    [s.slateBg]: slateBg === true,
   });
 
   return (
-    <div
-      className={rootClassName}
-    >
+    <div className={rootClassName}>
       {imageUrl ? (
         <Image
           layout="fill"
