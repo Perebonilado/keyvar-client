@@ -29,7 +29,7 @@ const SubscriptionCard: FC = () => {
   }, [isSuccess]);
 
   return (
-    <div className="w-full h-fit rounded-xl max-w-[350px] bg-[#020228] flex flex-col py-10 px-[75px] gap-3">
+    <div className="w-full h-fit rounded-xl max-w-[350px] bg-[#020228] flex flex-col py-10 px-[60px] gap-3">
       <h4 className="text-white text-center text-lg font-semibold">
         Stay in the loop
       </h4>

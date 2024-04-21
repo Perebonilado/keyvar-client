@@ -1,5 +1,7 @@
 import Avatar from "@/@shared/components/Avatar";
+import Button from "@/@shared/ui-components/Button";
 import Container from "@/@shared/ui-components/Container";
+import CopyIcon from "@/icons/CopyIcon";
 import FacebookIcon from "@/icons/FacebookIcon";
 import InstagramIcon from "@/icons/InstagramIcon";
 import LinkedInIcon from "@/icons/LinkedInIcon";
@@ -11,8 +13,16 @@ interface Props {
 }
 
 import React, { FC } from "react";
+import { toast } from "react-toastify";
 
 const ViewInsightBanner: FC<Props> = ({ title, author, authorImage }) => {
+  const handleCopyInsightUrlToClipBoard = () => {
+    try {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url);
+      toast.success("Link Copied Successfully");
+    } catch (error) {}
+  };
   return (
     <section className="bg-[#020228]">
       <Container className="pt-20 pb-10">
@@ -32,12 +42,19 @@ const ViewInsightBanner: FC<Props> = ({ title, author, authorImage }) => {
           </div>
 
           <div>
-            <p className="text-[#7D7D7D] mb-1">Share</p>
+            <Button
+              title="Share"
+              variant="text"
+              onClick={handleCopyInsightUrlToClipBoard}
+              className="!text-white"
+              starticon={<CopyIcon />}
+            />
+            {/* <p className="text-[#7D7D7D] mb-1">Share</p>
             <div className="flex items-center gap-2">
               <FacebookIcon />
               <LinkedInIcon />
               <InstagramIcon />
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>
