@@ -27,8 +27,8 @@ const OurApproachContainer: FC = () => {
             I want a proposal for my business:
           </p>
 
-          <Link href={NavLinks.leads.link}>
-            <Button title="Get in touch" fullWidth />
+          <Link href={NavLinks.salesDiscoveryCall.link}>
+            <Button title="Get in touch" size="large" fullWidth />
           </Link>
         </div>
       </Container>

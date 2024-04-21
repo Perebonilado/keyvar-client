@@ -5,7 +5,7 @@ import React, { FC } from "react";
 const AltLogo: FC = () => {
   return (
     <Link href={"/"}>
-      <div className="relative h-10 w-10">
+      <div className="relative h-14 w-14">
         {" "}
         <Image
           layout="fill"

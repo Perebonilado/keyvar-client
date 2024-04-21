@@ -9,6 +9,7 @@ import { LeadsFormValidation } from "@/FormValidations/LeadsFormValidation";
 import { useMakeBusinessEnquiryMutation } from "@/api-services/business-enquiry.service";
 import { ServicesEnum } from "@/models/business-enquiry";
 import { useRouter } from "next/router";
+import { NavLinks } from "@/@shared/constants";
 
 const initialValues = {
   firstName: "",
@@ -65,7 +66,7 @@ const LeadFormContainer: FC = () => {
   useEffect(() => {
     if (isSuccess) {
       formik.resetForm();
-      router.push("/leads/submission-success");
+      router.push(NavLinks.salesDiscoveryCall.subLinks.submitSuccess.link);
     }
   }, [isSuccess]);
 

@@ -25,7 +25,7 @@ const Checkbox: FC<Props> = ({ label, ...props }) => {
           <CheckIcon />
         </span>
       </div>
-      <label className="text-white text-sm font-semibold">{label}</label>
+      <label className="text-white text-sm">{label}</label>
     </div>
   );
 };

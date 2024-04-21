@@ -29,7 +29,7 @@ const MobileNav: FC<Props> = ({ handleClose, isSideNavOpen }) => {
   return (
     <div
       className={
-        "bg-[#020228] overflow-x-hidden rounded-md transition-all w-[90vw] max-w-[350px] h-[calc(100vh-100px)] z-[6000] fixed top-[90px] left-1/2 -translate-x-1/2 flex flex-col justify-between"
+        "bg-[#020228] overflow-x-hidden rounded-md transition-all w-[90vw] max-w-[95vw] h-[calc(100vh-100px)] z-[6000] fixed top-[90px] left-1/2 -translate-x-1/2 flex flex-col justify-between"
       }
     >
       <div className="flex flex-col h-full pt-12">
@@ -46,7 +46,7 @@ const MobileNav: FC<Props> = ({ handleClose, isSideNavOpen }) => {
             })}
           </AnimateRightTransition>
         </div>
-        <div
+        {/* <div
           style={{ flex: 1 }}
           className="py-2 px-5 flex flex-col justify-end gap-3"
         >
@@ -58,7 +58,7 @@ const MobileNav: FC<Props> = ({ handleClose, isSideNavOpen }) => {
 
             <InstagramIcon />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

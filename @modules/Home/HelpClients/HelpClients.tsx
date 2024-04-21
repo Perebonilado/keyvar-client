@@ -13,7 +13,7 @@ const HelpClients: FC = () => {
   return (
     <div className="bg-[#020228] text-white" id="services">
       <Container className={`${s.bg} min-h-screen relative py-24`}>
-        <h2 className="text-center text-4xl font-semibold">
+        <h2 className="text-center text-4xl max-md:text-3xl font-semibold">
           How we help clients
         </h2>
         <p className="text-center w-full max-w-[500px] mt-6 mx-auto">

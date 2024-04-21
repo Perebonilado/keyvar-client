@@ -24,7 +24,7 @@ const Banner: FC = () => {
             make your goals a reality.
           </p>
 
-          <Link href={NavLinks.leads.link}>
+          <Link href={NavLinks.salesDiscoveryCall.link}>
             <Button
               title="Get in touch"
               size="large"

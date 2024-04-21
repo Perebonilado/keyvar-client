@@ -35,7 +35,7 @@ const FileAttachmentInput: FC<Props> = ({
       />
       <div className="flex flex-col w-full">
         {label && (
-          <label className="text-white text-sm font-semibold mb-2">
+          <label className="text-white text-sm mb-2">
             {label} {isRequired && <span className="text-rose-600">*</span>}
           </label>
         )}

@@ -7,7 +7,7 @@ import React from "react";
 const SubmissionSuccess: NextPage = () => {
   return (
     <>
-      <AppHead title="Lead Submission Success" />
+      <AppHead title="Sales Discovery Call Submission Success" />
       <AppLayout>
         <LeadSuccessContainer />
       </AppLayout>

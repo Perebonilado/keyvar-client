@@ -62,7 +62,7 @@ const PricingOptionsContainer: FC = () => {
             title="Get in touch"
             fullWidth
             onClick={() => {
-              router.push(NavLinks.leads.link);
+              router.push(NavLinks.salesDiscoveryCall.link);
             }}
             role="link"
           />

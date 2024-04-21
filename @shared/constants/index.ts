@@ -7,9 +7,15 @@ export const NavLinks = {
     title: "Blog",
     link: "/blog",
   },
-  leads: {
-    title: "Link",
-    link: "/leads",
+  salesDiscoveryCall: {
+    title: "Sales Discovery Call",
+    link: "/sales-discovery-call",
+    subLinks: {
+      submitSuccess: {
+        title: "Submission Success",
+        link: "/sales-discovery-call/submission-success",
+      },
+    },
   },
   privacyPolicy: {
     title: "Privary Policy",
@@ -33,7 +39,7 @@ export const NavLinks = {
   },
   contactUs: {
     title: "Contact us",
-    link: "/leads",
+    link: "/sales-discovery-call",
   },
   careers: {
     title: "Careers",

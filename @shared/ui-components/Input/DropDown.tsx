@@ -86,7 +86,7 @@ const DropDown: FC<Props> = ({
   return (
     <>
       {label && (
-        <label className="text-white text-sm font-semibold">
+        <label className="text-white text-sm">
           {label} {isRequired && <span className="text-rose-600">*</span>}
         </label>
       )}
