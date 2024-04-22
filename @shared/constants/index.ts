@@ -5,7 +5,7 @@ export const NavLinks = {
   },
   blog: {
     title: "Blog",
-    link: "/blog",
+    link: "/insights",
   },
   salesDiscoveryCall: {
     title: "Sales Discovery Call",
