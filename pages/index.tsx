@@ -6,8 +6,9 @@ import OurApproachContainer from "@/@modules/Home/OurApproachContainer";
 import ReviewsSection from "@/@modules/Home/ReviewsSection";
 import AppHead from "@/@shared/components/AppHead";
 import AppLayout from "@/@shared/layout/AppLayout";
+import { NextPage } from "next";
 
-export default function Home() {
+const Home:NextPage = () => {
   return (
     <>
       <AppHead />
@@ -22,3 +23,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home
