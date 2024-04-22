@@ -21,10 +21,10 @@ const NotificationBar: FC = () => {
   return (
     <section className="bg-[#020228] py-24">
       <Container>
-        <div className="flex items-center max-md:flex-col">
+        <div className="flex  max-md:flex-col">
           <div
             style={{ flex: 1 }}
-            className="text-white font-semibold w-full max-md:mb-5"
+            className="max-md:!text-center text-white font-semibold w-full max-md:mb-8"
           >
             <h2 className="text-2xl">Keyvar Blog</h2>
             <p className="text-sm mt-3">
@@ -33,25 +33,25 @@ const NotificationBar: FC = () => {
           </div>
           <div
             style={{ flex: 1 }}
-            className="flex items-center justify-end max-md:justify-start w-full max-w-[350px]"
+            className="flex items-center justify-end max-md:justify-start w-full max-w-[370px]"
           >
             <div className="w-full">
               <FormikProvider value={formik}>
                 <Form>
                   <label className={`text-white text-sm font-semibold mb-2`}>
-                    Email
+                    Email Address
                   </label>
                   <div>
                     <div className="flex items-center mt-2">
                       <TextField
                         {...formik.getFieldProps("email")}
                         placeholder="Email address"
-                        className="min-h-[20px] text-black flex m-0 placeholder:text-gray-400 placeholder:text-sm px-4 py-1 outline-none bg-white border-none"
+                        className="min-h-[20px] text-black flex m-0 placeholder:text-gray-400 placeholder:text-sm px-4 py-3 outline-none bg-white border-none"
                       />
                       <Button
                         title=""
                         starticon={<ArrowRight />}
-                        className="!rounded-none h-[33px]"
+                        className="!rounded-none h-[49px]"
                       />
                     </div>
                     {formik.touched.email && formik.errors.email && (
@@ -60,7 +60,7 @@ const NotificationBar: FC = () => {
                   </div>
                 </Form>
               </FormikProvider>
-              <p className="text-[#7D7D7D] text-xs mt-4">
+              <p className="text-[#7D7D7D] mt-4">
                 You may opt out of these communications at any time. For more
                 information, check out our privacy policy.
               </p>

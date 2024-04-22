@@ -198,8 +198,8 @@ const JobApplicationForm: FC = () => {
             </div>
           </section>
 
-          <div className="w-full mx-auto max-w-[300px]">
-            <Button title="Send Application" type="submit" fullWidth />
+          <div className="w-full mx-auto max-w-[370px]">
+            <Button title="Send Application" size="large" type="submit" fullWidth />
           </div>
         </div>
       </Form>

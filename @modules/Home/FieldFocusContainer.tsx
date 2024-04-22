@@ -8,7 +8,7 @@ const FieldFocusContainer: FC = () => {
       <Container>
         <h2 className="text-3xl font-semibold">Our field focus</h2>
 
-        <p className="text-sm w-full max-w-[500px] leading-relaxed mt-10">
+        <p className="w-full max-w-[500px] leading-relaxed mt-6">
           We unlock the potential of diverse industries with our{" "}
           <span className="text-[#2C00B9]">strategic </span>
           <span className="text-[#2C00B9]">

@@ -8,21 +8,21 @@ import Image from "next/image";
 
 const OurApproachContainer: FC = () => {
   return (
-    <section className="py-14">
+    <section className="pb-14">
       <Container>
         <h4 className="text-center text-3xl font-semibold">Our Approach</h4>
-        <p className="text-center w-full max-w-[600px] mx-auto mt-10">
+        <p className="text-center w-full max-w-[600px] mx-auto mt-6">
           At Keyvar, we believe in the power of data to transform businesses.
           Our process is proven to guarantee results that help you win.
         </p>
 
-        <div className="my-36 flex justify-center gap-10 flex-wrap gap-y-24">
+        <div className="my-28 flex justify-center gap-10 flex-wrap gap-y-20">
           {data.map((d, idx) => {
             return <OurApproachItem {...d} key={idx} />;
           })}
         </div>
 
-        <div className="w-full mx-auto max-w-[300px]">
+        <div className="w-full mx-auto max-w-[370px]">
           <p className="text-sm mb-3 text-center">
             I want a proposal for my business:
           </p>
@@ -33,11 +33,11 @@ const OurApproachContainer: FC = () => {
         </div>
       </Container>
 
-      <div className="w-full h-[300px] relative">
+      <div className="w-full h-[200px] relative">
         <Image
           layout="fill"
           objectFit="contain"
-          objectPosition="50% 50%"
+          objectPosition="50% 35%"
           alt="background image"
           src={"/assets/shared/bent-line.png"}
         />

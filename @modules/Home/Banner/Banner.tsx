@@ -18,7 +18,7 @@ const Banner: FC = () => {
             <span className="text-[#2C00B9]">strategic digital solutions</span>
           </h1>
 
-          <p className="pt-4 pb-20 font-semibold w-full max-w-[500px]">
+          <p className="pt-6 pb-20 w-full max-w-[500px]">
             From groundbreaking business ideas to unique creative projects, we
             specialize in crafting bespoke digital marketing strategies that
             make your goals a reality.
@@ -33,8 +33,8 @@ const Banner: FC = () => {
             />
           </Link>
         </div>
-        <PattronImage />
-        <FrannemsImage />
+        {/* <PattronImage />
+        <FrannemsImage /> */}
       </Container>
     </section>
   );

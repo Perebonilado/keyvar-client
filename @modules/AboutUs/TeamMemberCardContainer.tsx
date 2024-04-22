@@ -22,11 +22,11 @@ const TeamMemberCardContainer: FC = () => {
           <h2 className="text-3xl max-sm:text-xl font-semibold mb-2">
             Interested in joining our team?
           </h2>
-          <div className="w-full mx-auto max-w-[300px]">
+          <div className="w-full mx-auto max-w-[370px]">
             <p className="text-sm mb-3">Explore our open roles:</p>
 
             <Link href={NavLinks.careers.link}>
-              <Button title="Careers" fullWidth />
+              <Button title="Careers" size="large" fullWidth />
             </Link>
           </div>
         </div>

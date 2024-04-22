@@ -55,7 +55,7 @@ const PricingOptionsContainer: FC = () => {
             return <PricingCard {...plan} key={idx} />;
           })}
         </div>
-        <div className="flex flex-col items-center justify-center gap-3 text-center w-full mx-auto sm:max-w-[300px] pb-16">
+        <div className="flex flex-col items-center justify-center gap-3 text-center w-full mx-auto sm:max-w-[370px] pb-16">
           <p>For more details on any of our services</p>
 
           <Button
@@ -65,6 +65,7 @@ const PricingOptionsContainer: FC = () => {
               router.push(NavLinks.salesDiscoveryCall.link);
             }}
             role="link"
+            size="large"
           />
         </div>
       </Container>

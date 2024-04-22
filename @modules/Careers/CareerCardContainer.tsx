@@ -19,7 +19,7 @@ const CareerCardContainer: FC = () => {
         <div className="w-full mx-auto max-w-[300px]">
           <p className="text-sm mb-3">See a role you’re interested in?</p>
           <Link href={NavLinks.careers.subLinks.apply.link}>
-            <Button title="Apply" fullWidth />
+            <Button title="Apply" size="large" fullWidth />
           </Link>
 
           <Link href={"/"}>

@@ -108,7 +108,7 @@ const DropDown: FC<Props> = ({
           <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2" />
         )}
         {isOptionsOpen && (
-          <div className="w-full absolute left-0 top-[calc(100%+5px)] px-4 bg-white rounded-md cursor-pointer shadow-md">
+          <div className="w-full absolute left-0 top-[calc(100%+5px)] px-4 bg-white rounded-md cursor-pointer shadow-md z-[300]">
             {options.map((opt, idx) => (
               <DropDownItem {...opt} onSelect={(e) => onSelect(e)} key={idx} />
             ))}

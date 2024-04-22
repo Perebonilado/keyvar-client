@@ -50,6 +50,7 @@ const SubscriptionCard: FC = () => {
             <Button
               title="Subscribe"
               type="submit"
+              size="large"
               fullWidth
               className="mt-4"
             />

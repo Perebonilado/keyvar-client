@@ -5,7 +5,7 @@ import React, { FC } from "react";
 export const AppLogo: FC = () => {
   return (
     <Link href={"/"}>
-      <div className="relative h-10 w-10">
+      <div className="relative h-12 w-12">
         {" "}
         <Image
           layout="fill"
