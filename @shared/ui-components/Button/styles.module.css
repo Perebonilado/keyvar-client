@@ -1,5 +1,5 @@
 .root {
-  @apply font-medium flex items-center gap-4 justify-center;
+  @apply font-medium flex items-center gap-4 justify-center cursor-pointer;
 }
 
 .contained.primary {
