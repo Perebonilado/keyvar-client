@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useState } from "react";
 import { AppLogo } from "../AppLogo";
 import { NavLinks } from "@/@shared/constants";
 import Button from "../../ui-components/Button";
@@ -6,10 +6,18 @@ import Link from "next/link";
 import Container from "../../ui-components/Container";
 import Hamburger from "../Hamburger";
 import MobileNav from "../MobileNav";
+import cn from "classnames";
+import { useActiveNavLink } from "@/hooks/useActiveNavLink";
 
 const Navbar: FC = () => {
   const linkKeys = ["services", "aboutUs", "pricing", "insights"] as const;
   const [isMobileNav, setIsMobileNav] = useState(false);
+  const [activeNavLink] = useActiveNavLink();
+
+  const contactUsBtnActiveStyling = cn({
+    ["!text-[#2C00B9] !border-[#2C00B9]"]:
+      activeNavLink === NavLinks.contactUs.link,
+  });
 
   return (
     <>
@@ -25,12 +33,16 @@ const Navbar: FC = () => {
                 className="flex items center gap-14 max-md:hidden"
               >
                 {linkKeys.map((link, idx) => {
+                  const className = cn({
+                    "!text-[#2C00B9]": activeNavLink === NavLinks[link].link,
+                  });
                   return (
                     <Link href={NavLinks[link].link} key={idx}>
                       <Button
                         variant="text"
                         color="secondary"
                         title={NavLinks[link].title}
+                        className={className}
                       />
                     </Link>
                   );
@@ -47,6 +59,7 @@ const Navbar: FC = () => {
                   color="secondary"
                   style={{ fontFamily: "Literata, serif !important" }}
                   title={NavLinks.contactUs.title}
+                  className={contactUsBtnActiveStyling}
                 />
               </Link>
             </div>

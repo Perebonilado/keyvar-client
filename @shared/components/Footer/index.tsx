@@ -9,6 +9,8 @@ import InstagramIcon from "@/icons/InstagramIcon";
 import ChevronRight from "@/icons/ChevronRight";
 import cn from "classnames";
 import { AppLogo } from "../AppLogo";
+import { useActiveNavLink } from "@/hooks/useActiveNavLink";
+import FooterLink from "../FooterLink/FooterLink";
 
 interface Props {
   bgColor?: "default" | "white";
@@ -32,36 +34,36 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
     <footer className={footerRootStyling}>
       <Container className="py-10">
         <div className="flex flex-col gap-6 md:hidden pb-14 pt-6 border-b border-b-gray-500">
-          <Link href={NavLinks.services.link}>
-            <span className={navLinkContainerStyling}>
-              {NavLinks.services.title}
-              <ChevronRight fill="current" />
-            </span>
-          </Link>
-          <Link href={NavLinks.aboutUs.link}>
-            <span className={navLinkContainerStyling}>
-              {NavLinks.aboutUs.title}
-              <ChevronRight fill="current" />
-            </span>
-          </Link>
-          <Link href={NavLinks.pricing.link}>
-            <span className={navLinkContainerStyling}>
-              {NavLinks.pricing.title}
-              <ChevronRight fill="current" />
-            </span>
-          </Link>
-          <Link href={NavLinks.blog.link}>
-            <span className={navLinkContainerStyling}>
-              {NavLinks.blog.title}
-              <ChevronRight fill="current" />
-            </span>
-          </Link>
-          <Link href={NavLinks.careers.link}>
-            <span className={navLinkContainerStyling}>
-              {NavLinks.careers.title}
-              <ChevronRight fill="current" />
-            </span>
-          </Link>
+          <FooterLink
+            bgColor={bgColor}
+            link={NavLinks.services.link}
+            title={NavLinks.services.title}
+            hasChevron={true}
+          />
+          <FooterLink
+            bgColor={bgColor}
+            link={NavLinks.aboutUs.link}
+            title={NavLinks.aboutUs.title}
+            hasChevron={true}
+          />
+          <FooterLink
+            bgColor={bgColor}
+            link={NavLinks.pricing.link}
+            title={NavLinks.pricing.title}
+            hasChevron={true}
+          />
+          <FooterLink
+            bgColor={bgColor}
+            link={NavLinks.blog.link}
+            title={NavLinks.blog.title}
+            hasChevron={true}
+          />
+          <FooterLink
+            bgColor={bgColor}
+            link={NavLinks.careers.link}
+            title={NavLinks.careers.title}
+            hasChevron={true}
+          />
         </div>
         <div className="max-md:pt-14">
           {bgColor !== "default" ? <AppLogo /> : <AltLogo />}
@@ -75,23 +77,33 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
 
           <div style={{ flex: 1 }} className="flex gap-x-[120px] max-md:hidden">
             <div className="flex flex-col gap-5">
-              <Link href={NavLinks.aboutUs.link}>
-                <span className="font-semibold">{NavLinks.aboutUs.title}</span>
-              </Link>
-              <Link href={NavLinks.insights.link}>
-                <span className="font-semibold">{NavLinks.blog.title}</span>
-              </Link>
-              <Link href={NavLinks.careers.link}>
-                <span className="font-semibold">{NavLinks.careers.title}</span>
-              </Link>
+              <FooterLink
+                bgColor={bgColor}
+                link={NavLinks.aboutUs.link}
+                title={NavLinks.aboutUs.title}
+              />
+              <FooterLink
+                bgColor={bgColor}
+                link={NavLinks.blog.link}
+                title={NavLinks.blog.title}
+              />
+              <FooterLink
+                bgColor={bgColor}
+                link={NavLinks.careers.link}
+                title={NavLinks.careers.title}
+              />
             </div>
             <div className="flex flex-col gap-5">
-              <Link href={NavLinks.services.link}>
-                <span className="font-semibold">{NavLinks.services.title}</span>
-              </Link>
-              <Link href={NavLinks.pricing.link}>
-                <span className="font-semibold">{NavLinks.pricing.title}</span>
-              </Link>
+              <FooterLink
+                bgColor={bgColor}
+                link={NavLinks.services.link}
+                title={NavLinks.services.title}
+              />
+              <FooterLink
+                bgColor={bgColor}
+                link={NavLinks.pricing.link}
+                title={NavLinks.pricing.title}
+              />
             </div>
           </div>
         </div>
@@ -107,17 +119,17 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
 
         <div className="pt-7 border-b border-b-gray-500 pb-3">
           <div className="flex gap-3">
-            <Link href={NavLinks.privacyPolicy.link}>
-              <span className="font-semibold">
-                {NavLinks.privacyPolicy.title}
-              </span>
-            </Link>
+            <FooterLink
+              bgColor={bgColor}
+              link={NavLinks.privacyPolicy.link}
+              title={NavLinks.privacyPolicy.title}
+            />
             <span className="font-semibold">|</span>
-            <Link href={NavLinks.cookiePolicy.link}>
-              <span className="font-semibold">
-                {NavLinks.cookiePolicy.title}
-              </span>
-            </Link>
+            <FooterLink
+              bgColor={bgColor}
+              link={NavLinks.cookiePolicy.link}
+              title={NavLinks.cookiePolicy.title}
+            />
           </div>
         </div>
         <p className="pt-3">
