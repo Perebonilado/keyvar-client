@@ -1,5 +1,5 @@
 import Container from "@/@shared/ui-components/Container";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import AltLogo from "../AppLogo/AltLogo";
 import Link from "next/link";
 import { NavLinks } from "@/@shared/constants";
@@ -19,38 +19,47 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
     ["bg-[#020228] text-white"]: bgColor === "default",
     ["bg-white text-black"]: bgColor === "white",
   });
+
+  const navLinkContainerStyling = cn(
+    `flex justify-between items-center font-semibold hover:fill-[#2C00B9] hover:text-[#2C00B9]`,
+    {
+      ["fill-white"]: bgColor === "default",
+      ["fill-black"]: bgColor === "white",
+    }
+  );
+
   return (
     <footer className={footerRootStyling}>
       <Container className="py-10">
         <div className="flex flex-col gap-6 md:hidden pb-14 pt-6 border-b border-b-gray-500">
           <Link href={NavLinks.services.link}>
-            <span className="flex justify-between items-center font-semibold">
+            <span className={navLinkContainerStyling}>
               {NavLinks.services.title}
-              <ChevronRight />
+              <ChevronRight fill="current" />
             </span>
           </Link>
           <Link href={NavLinks.aboutUs.link}>
-            <span className="flex justify-between items-center font-semibold">
+            <span className={navLinkContainerStyling}>
               {NavLinks.aboutUs.title}
-              <ChevronRight />
+              <ChevronRight fill="current" />
             </span>
           </Link>
           <Link href={NavLinks.pricing.link}>
-            <span className="flex justify-between items-center font-semibold">
+            <span className={navLinkContainerStyling}>
               {NavLinks.pricing.title}
-              <ChevronRight />
+              <ChevronRight fill="current" />
             </span>
           </Link>
           <Link href={NavLinks.blog.link}>
-            <span className="flex justify-between items-center font-semibold">
+            <span className={navLinkContainerStyling}>
               {NavLinks.blog.title}
-              <ChevronRight />
+              <ChevronRight fill="current" />
             </span>
           </Link>
           <Link href={NavLinks.careers.link}>
-            <span className="flex justify-between items-center font-semibold">
+            <span className={navLinkContainerStyling}>
               {NavLinks.careers.title}
-              <ChevronRight />
+              <ChevronRight fill="current" />
             </span>
           </Link>
         </div>

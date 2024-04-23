@@ -11,6 +11,10 @@
     @apply border-2 border-[#2C00B9] text-[#2C00B9] bg-transparent;
     font-family: "Literata", serif !important;
 }
+.outlined.secondary {
+    @apply border-2 border-[#000000] text-[#000000] bg-transparent;
+    font-family: "Literata", serif !important;
+}
 
 .text.primary {
     @apply text-[#2C00B9] border-none !p-0;

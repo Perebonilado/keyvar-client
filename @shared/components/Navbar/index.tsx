@@ -43,7 +43,8 @@ const Navbar: FC = () => {
             >
               <Link href={NavLinks.contactUs.link}>
                 <Button
-                  variant="text"
+                  variant="outlined"
+                  color="secondary"
                   style={{ fontFamily: "Literata, serif !important" }}
                   title={NavLinks.contactUs.title}
                 />

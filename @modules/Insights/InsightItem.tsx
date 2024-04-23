@@ -9,7 +9,7 @@ const InsightItem: FC<Props> = (props) => {
   const router = useRouter();
   return (
     <div
-      className="w-full max-w-[320px] cursor-pointer"
+      className="w-full max-w-[350px] cursor-pointer"
       onClick={() => {
         router.push(`/insights/${props.id}`);
       }}

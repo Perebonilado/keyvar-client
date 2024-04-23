@@ -49,7 +49,7 @@ const ReviewItem: FC<Props> = ({
           </div>
         </div>
 
-        <div className="absolute top-12 left-1/2 -translate-x-1/2">
+        {/* <div className="absolute top-12 left-1/2 -translate-x-1/2">
           <div className="relative w-[250px] h-[80px]">
             <Image
               layout="fill"
@@ -62,7 +62,7 @@ const ReviewItem: FC<Props> = ({
               alt={"business logo"}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
