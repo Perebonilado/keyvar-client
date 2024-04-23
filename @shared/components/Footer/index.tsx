@@ -1,5 +1,5 @@
 import Container from "@/@shared/ui-components/Container";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import AltLogo from "../AppLogo/AltLogo";
 import Link from "next/link";
 import { NavLinks } from "@/@shared/constants";
