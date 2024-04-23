@@ -10,7 +10,7 @@ export const useActiveNavLink = () => {
     if (window.location.hash === "#services" && pathname === "/") {
       return NavLinks.services.link;
     }
-    console.log(pathname.replace("/", ""));
+
     return activeLink.find(
       (link) =>
         link === pathname ||
