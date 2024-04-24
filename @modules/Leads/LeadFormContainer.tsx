@@ -153,7 +153,7 @@ const LeadFormContainer: FC = () => {
 
           <div className="w-full mx-auto max-w-[370px]">
             <Button
-              title="Send Application"
+              title="Submit"
               type="submit"
               disabled={isLoading}
               size="large"

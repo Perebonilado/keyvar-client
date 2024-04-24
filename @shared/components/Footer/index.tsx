@@ -111,9 +111,28 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
         <div>
           <p>Connect with us:</p>
           <div className="flex gap-3 pt-4">
-            <FacebookIcon />
-            <LinkedInIcon />
-            <InstagramIcon />
+            <a
+              href="https://web.facebook.com/people/Keyvar-Solutions/61553631627069/?mibextid=LQQJ4d"
+              target="_blank"
+              className="cursor-pointer"
+            >
+              <FacebookIcon />
+            </a>
+            <a
+              target="_blank"
+              href={"https://www.linkedin.com/company/keyvar-solutions"}
+              className="cursor-pointer"
+            >
+              <LinkedInIcon />
+            </a>
+
+            <a
+              href="https://www.instagram.com/keyvarsolutions/"
+              target="_blank"
+              className="cursor-pointer"
+            >
+              <InstagramIcon />
+            </a>
           </div>
         </div>
 

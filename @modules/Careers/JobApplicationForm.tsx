@@ -13,6 +13,7 @@ import {
   useGetActiveJobRolesQuery,
 } from "@/api-services/careers.service";
 import { JobApplicationPayload } from "@/models/career";
+import roles from "../../json-data/job-openings.json"
 
 const initialValues = {
   firstName: "",
@@ -32,11 +33,11 @@ const JobApplicationForm: FC = () => {
   const [resume, setResume] = useState<File | null>(null);
   const [role, setRole] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
-  const {
-    data: roles,
-    isError: rolesError,
-    refetch: refetchRoles,
-  } = useGetActiveJobRolesQuery("");
+  // const {
+  //   data: roles,
+  //   isError: rolesError,
+  //   refetch: refetchRoles,
+  // } = useGetActiveJobRolesQuery("");
 
   const [apply, { isSuccess: jobApplicationSuccess }] =
     useApplyForJobMutation();
@@ -105,22 +106,22 @@ const JobApplicationForm: FC = () => {
                   return (
                     <Checkbox
                       onChange={() => {
-                        setRole(item.id);
+                        setRole(item.title);
                       }}
-                      checked={role === item.id}
+                      checked={role === item.title}
                       label={item.title}
                       key={idx}
                     />
                   );
                 })}
-              {!roles && rolesError && (
+              {/* {!roles && rolesError && (
                 <Button
                   title="Refetch Roles"
                   className="w-fit"
                   variant="contained"
                   onClick={refetchRoles}
                 />
-              )}
+              )} */}
             </div>
 
             <p className="font-semibold mt-16">Tell us about yourself</p>
