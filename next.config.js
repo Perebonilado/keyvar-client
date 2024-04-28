@@ -3,7 +3,9 @@
  */
 const nextConfig = {
   output: 'export',
- 
+  images: {
+    unoptimized: true, // Disable image optimization
+  },
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   // trailingSlash: true,
  
@@ -12,6 +14,6 @@ const nextConfig = {
  
   // Optional: Change the output directory `out` -> `dist`
   // distDir: 'dist',
-}
+};
  
-module.exports = nextConfig
+module.exports = nextConfig;
