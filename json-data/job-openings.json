@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Digital Marketing Strategist",
+    "workMode": "Remote",
+    "description": [
+      "Develop comprehensive digital marketing strategies aligned with client objectives and target audience demographics.",
+      "Conduct market research, competitor analysis, and audience segmentation to inform strategy development.",
+      "Collaborate with clients to understand their brand identity, goals, and key performance indicators (KPIs).",
+      "Identify relevant digital channels, including social media, search engine optimization (SEO), email marketing, and content marketing, to maximize client reach and engagement.",
+      "Monitor campaign performance, analyze data metrics, and optimize strategies to improve conversion rates and return on investment (ROI).",
+      "Stay abreast of industry trends, best practices, and emerging technologies to enhance Keyvar's digital marketing offerings"
+    ]
+  },
+  {
+    "title": "Content Marketing Specialist",
+    "workMode": "Remote",
+    "description": [
+      "Develop and execute content marketing strategies to drive brand awareness, lead generation, and customer engagement for Keyvar's clients.",
+      "Create compelling and relevant content assets, including blog posts, articles, whitepapers, case studies, infographics, and videos, tailored to target audiences and industry niches.",
+      "Conduct keyword research and SEO optimization to enhance content visibility and organic search rankings.",
+      "Manage content calendars, editorial schedules, and distribution channels to ensure timely and consistent content delivery.",
+      "Collaborate with internal teams, including graphic designers, videographers, and social media managers, to create multimedia content assets that resonate with audiences.",
+      "Monitor content performance metrics, such as website traffic, engagement metrics, and lead conversions, and provide actionable insights for continuous improvement.",
+      "Stay updated on content marketing trends, industry developments, and platform updates to inform content strategies and optimize Keyvar's content marketing initiatives."
+    ]
+  },
+  {
+    "title": "Marketing Data Scientist",
+    "workMode": "Remote",
+    "description": [
+      "Utilize advanced statistical and machine learning techniques to analyze large datasets and extract actionable insights for Keyvar's digital marketing campaigns.",
+      "Develop predictive models, algorithms, and data-driven solutions to optimize campaign performance, customer segmentation, and audience targeting strategies.",
+      "Work closely with cross-functional teams to gather requirements, define project objectives, and translate business needs into data science solutions.",
+      "Clean, preprocess, and transform raw data from various sources to ensure data quality, consistency, and compatibility for analysis.",
+      "Design and implement experiments to test hypotheses, measure outcomes, and iterate on data-driven strategies to improve marketing effectiveness and ROI.",
+      "Develop data visualization dashboards and reports using tools like Tableau, Power BI, or similar platforms to communicate insights and findings to internal stakeholders and clients.",
+      "Stay updated on emerging trends and advancements in data science, machine learning, and artificial intelligence to identify opportunities for innovation and optimization in Keyvar's data analytics capabilities."
+    ]
+  },
+  {
+    "title": "Graphic Designer",
+    "workMode": "Remote",
+    "description": [
+      "Create visually compelling and engaging content for Keyvar's clients across various social media platforms, including Facebook, Instagram, Twitter, LinkedIn, and others.",
+      "Collaborate with the digital marketing team to develop creative concepts, themes, and visual strategies that align with client brand identities and marketing objectives.",
+      "Design eye-catching graphics, illustrations, animations, and multimedia assets to convey key messages, promote products/services, and drive audience engagement on social media.",
+      "Adapt content for different platforms, formats, and audience preferences while maintaining consistency in brand voice, tone, and style.",
+      "Stay updated on social media trends, platform algorithms, and best practices to inform content creation strategies and optimize performance.",
+      "Work closely with copywriters, photographers, videographers, and other creative professionals to coordinate content production and ensure cohesive storytelling across social media channels.",
+      "Monitor performance metrics, analyze engagement data, and iterate on content strategies based on audience"
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Digital Strategy Consultation",
+    "service": "Developing a customized strategy.",
+    "idealFor": "Businesses needing direction in digital transformation.",
+    "price": "500",
+    "category": "individual"
+  },
+  {
+    "title": "SEO & Paid Campaigns",
+    "service": "SEO optimization and paid media campaign management.",
+    "idealFor": "Businesses looking to improve online visibility and traffic.",
+    "price": "1000",
+    "category": "individual"
+  },
+  {
+    "title": "Content Creation & Management",
+    "service": "Crafting and managing digital content.",
+    "idealFor": "Brands needing high-quality, engaging content.",
+    "price": "750",
+    "category": "individual"
+  },
+  {
+    "title": "Analytics and Customer Insight Reporting",
+    "service": "Providing analytics and customer behavior insights.",
+    "idealFor": "Businesses requiring data-driven decision making.",
+    "price": "600",
+    "category": "individual"
+  },
+  {
+    "title": "Social Media Management",
+    "service": "Managing and strategizing social media presence.",
+    "idealFor": "Brands looking to enhance their social media impact.",
+    "price": "500",
+    "category": "individual"
+  },
+  {
+    "title": "Training and Workshops",
+    "service": "Conducting digital marketing and analytics workshops.",
+    "idealFor": "Businesses seeking to upskill their team.",
+    "price": "300",
+    "category": "individual"
+  },
+  {
+    "title": "UX/UI Design Projects",
+    "service": "Designing user interfaces and experiences.",
+    "idealFor": "Businesses looking to improve website/app usability.",
+    "price": "1000",
+    "category": "individual"
+  },
+  {
+    "title": "Market Research Services",
+    "service": "Conducting specialized market research.",
+    "idealFor": "Businesses needing detailed market insights.",
+    "price": "800",
+    "category": "individual"
+  },
+  {
+    "title": "Classic Elegance Package",
+    "service": "Developing a customized strategy.",
+    "idealFor": "Businesses needing direction in digital transformation.",
+    "price": "2200",
+    "category": "tailored"
+  },
+  {
+    "title": "Roadster Analytics Package",
+    "service": "SEO optimization and paid media campaign management.",
+    "idealFor": "Businesses looking to improve online visibility and traffic.",
+    "price": "2500",
+    "category": "tailored"
+  },
+  {
+    "title": "Grand Tourer Content Package",
+    "service": "Crafting and managing digital content.",
+    "idealFor": "Brands needing high-quality, engaging content.",
+    "price": "4500",
+    "category": "tailored"
+  }
+]
