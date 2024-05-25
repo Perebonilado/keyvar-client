@@ -33,7 +33,7 @@ const ViewInsightBanner: FC<Props> = ({ title, author, authorImage }) => {
         <div className="flex justify-between items-center gap-3 mt-6 max-sm:flex-col max-sm:items-start">
           <div className="flex items-center gap-1">
             <Avatar
-              fallBack={author ?? ""}
+              fallBack={author ? author[0] : ""}
               imageUrl={authorImage ?? ""}
               alt="author image"
               size="sm"

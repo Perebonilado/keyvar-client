@@ -71,7 +71,9 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
         <div className="py-8 flex">
           <div style={{ flex: 1 }} className="flex flex-col gap-2">
             <p className="font-semibold">Contact</p>
-            <a href="mailto:support@keyvarsolutions.com"></a>
+            <a href="mailto:support@keyvarsolutions.com">
+              support@keyvarsolutions.com
+            </a>
             <p>26 S Calvert St., MD 21202</p>
           </div>
 

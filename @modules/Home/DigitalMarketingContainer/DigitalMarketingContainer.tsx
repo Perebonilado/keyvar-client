@@ -35,14 +35,14 @@ const DigitalMarketingContainer: FC = () => {
                 <p className="text-base w-full max-w-[500px]">
                   <i>
                     "With the right digital marketing strategy, small and medium
-                    business can experience a{" "}
+                    businesses can experience a{" "}
                     <span className="text-[#2C00B9] font-bold">30% boost</span>"
                   </i>
                 </p>
               </FadeInSlideUp>
 
               <FadeInTransition>
-                <Link href={NavLinks.pricing.link}>
+                <Link href={NavLinks.insights.link}>
                   <Button
                     title="Learn more"
                     variant="outlined"
