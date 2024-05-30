@@ -26,7 +26,7 @@ const PricingCard: FC<Props> = ({ title, idealFor, price, service }) => {
             <p>{idealFor}</p>
           </div>
 
-          <h4 className="font-semibold">${Number(price).toLocaleString()}</h4>
+          <h4 className="font-semibold">Starting at ${Number(price).toLocaleString()}</h4>
         </div>
       </div>
     </AnimateRightTransition>

@@ -74,7 +74,7 @@ const Footer: FC<Props> = ({ bgColor = "default" }) => {
             <a href="mailto:support@keyvarsolutions.com">
               support@keyvarsolutions.com
             </a>
-            <p>26 S Calvert St., MD 21202</p>
+            {/* <p>26 S Calvert St., MD 21202</p> */}
           </div>
 
           <div style={{ flex: 1 }} className="flex gap-x-[120px] max-md:hidden">

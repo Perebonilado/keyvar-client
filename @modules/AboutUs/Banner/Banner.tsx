@@ -11,11 +11,12 @@ const Banner: FC = () => {
         </h1>
 
         <p className="font-semibold w-full max-w-[550px] mt-10">
-          We deliver cutting-edge digital marketing with personalized service.
-          Founded by Kalada Nemieboka, a visionary with a passion for
-          data-driven strategies, Keyvar Solutions is more than just a digital
-          marketing agency; it's a hub of innovation nestled in the heart of
-          <span className="text-[#2C00B9]"> McLean, Virginia.</span>
+          At <span className="text-[#2C00B9]">Keyvar Solutions</span>, we elevate your digital marketing with innovative
+          strategies, integrate traditional digital marketing techniques with
+          advanced machine learning and data analytics to deliver measurable
+          results. Serving businesses in the Washington Metropolitan area and
+          beyond, our expert team is <span className="text-[#2C00B9]">committed to helping</span> you achieve your
+          marketing goals.
         </p>
       </Container>
     </header>
