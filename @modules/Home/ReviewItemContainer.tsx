@@ -55,7 +55,7 @@ const ReviewItemContainer: FC<Props> = ({ data, handleClick }) => {
 
         </div>
         <div className="mx-auto w-fit flex items-center gap-2">
-          {data.map((item, idx) => {
+          {data.length > 1 && data.map((item, idx) => {
             return (
               <ReviewMarker
                 {...item}

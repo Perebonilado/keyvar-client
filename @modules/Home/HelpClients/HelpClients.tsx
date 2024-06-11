@@ -8,6 +8,7 @@ import ServiceCardContainer from "../ServiceCardContainer";
 import Button from "@/@shared/ui-components/Button";
 import Link from "next/link";
 import { NavLinks } from "@/@shared/constants";
+import WorkShopIcon from "@/icons/WorkShopIcon";
 
 const HelpClients: FC = () => {
   return (
@@ -68,5 +69,18 @@ const data = [
       "Employ best practices to organically capture customer attention on their various social feeds.",
     ],
     icon: <SocialMediaManagementIcon />,
+  },
+  {
+    title: "Trainings and Workshops",
+    content: [
+      `Use SEO and UX audits (Google Search Console, Ahrefs) to improve customer experience and boost brand awareness on TikTok, Facebook, Instagram, and LinkedIn.`,
+      `Develop skills to analyze data and optimize marketing with Google Analytics, Tableau, and machine learning.`,
+      `Comprehensive training in cloud computing (AWS, Azure), network administration, help desk support, access control, and software development.`,
+    ],
+    icon: (
+      <div className="flex items-center justify-center w-[70px] h-[70px] rounded-full bg-[#fbfbf3]">
+        <WorkShopIcon />
+      </div>
+    ),
   },
 ];

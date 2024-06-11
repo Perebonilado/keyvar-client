@@ -23,7 +23,8 @@ const ReviewItem: FC<Props> = ({
     }
   );
   return (
-    <div className="translate-x-1/2">
+    //translate-x-1/2 - add this to the className on the below line 27 if there is more than one item in the review data
+    <div className="">
       <div
         onClick={() => {
           handleClick(id);

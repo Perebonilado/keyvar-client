@@ -35,17 +35,24 @@
     "category": "individual"
   },
   {
-    "title": "Training and Workshops",
+    "title": "UX/UI Design Projects",
+    "service": "Designing user interfaces and experiences.",
+    "idealFor": "Businesses looking to improve website/app usability.",
+    "price": "1000",
+    "category": "individual"
+  },
+  {
+    "title": "Digital Strategy Trainings",
     "service": "Conducting digital marketing and analytics workshops.",
     "idealFor": "Businesses seeking to upskill their team.",
     "price": "300",
     "category": "individual"
   },
   {
-    "title": "UX/UI Design Projects",
-    "service": "Designing user interfaces and experiences.",
-    "idealFor": "Businesses looking to improve website/app usability.",
-    "price": "1000",
+    "title": "IT Technical Training",
+    "service": "Providing in-depth workshops on topics ranging from cloud, help desk support, access control, and network management.",
+    "idealFor": "Ideal for: Small businesses and IT field management firms.",
+    "price": "2500",
     "category": "individual"
   },
   {
@@ -74,6 +81,13 @@
     "service": "Crafting and managing digital content.",
     "idealFor": "Brands needing high-quality, engaging content.",
     "price": "4500",
+    "category": "tailored"
+  },
+  {
+    "title": "Digital Transformation Package",
+    "service": "Setting up an online presence for your business, and comprehensive training/workshops",
+    "idealFor": "Businesses looking to establish or enhance their digital footprint.",
+    "price": "7500",
     "category": "tailored"
   }
 ]

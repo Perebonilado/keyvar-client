@@ -5,19 +5,19 @@ import { ReviewModel } from "@/models/review";
 
 const ReviewsSection: FC = () => {
   const [data, setData] = useState<ReviewModel[]>([
-    {
-      id: "1",
-      isActive: true,
-      title:
-        "Working with Keyvar was a pivotal moment for our field engineering firm.",
-      body: "Their expertise in digital marketing and data analytics helped us reach a broader audience and significantly improved our online visibility.",
-      subBody:
-        "The tailored content they created resonated well with our target market, and their strategic use of SEO and social media brought us to the forefront of our industry.",
-      logo: "/assets/home/pattron.png",
-    },
+    // {
+    //   id: "1",
+    //   isActive: true,
+    //   title:
+    //     "Working with Keyvar was a pivotal moment for our field engineering firm.",
+    //   body: "Their expertise in digital marketing and data analytics helped us reach a broader audience and significantly improved our online visibility.",
+    //   subBody:
+    //     "The tailored content they created resonated well with our target market, and their strategic use of SEO and social media brought us to the forefront of our industry.",
+    //   logo: "/assets/home/pattron.png",
+    // },
     {
       id: "2",
-      isActive: false,
+      isActive: true,
       title: "It’s been a game-changer for our business!",
       body: "Keyvar Solutions transformed our digital presence with their unique blend of analytics and creativity.",
       subBody:
